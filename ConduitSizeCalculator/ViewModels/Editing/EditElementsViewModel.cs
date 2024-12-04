@@ -595,7 +595,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             }
         }
         private string _destination;
-
+        //Test comment
         public string CableDestination
         {
             get { return _cabledestination; }
