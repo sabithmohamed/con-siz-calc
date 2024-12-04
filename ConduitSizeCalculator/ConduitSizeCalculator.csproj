@@ -188,8 +188,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Idibri.RevitPlugin.Common">
-      <HintPath>..\..\..\..\..\OneDrive - BIM Integrated Services Private Limited\Desktop\Salas O'Brian\Revit Tool Update\Current Codebase\revit-common\Idibri.RevitPlugin.Common\bin\Debug\Idibri.RevitPlugin.Common.dll</HintPath>
+    <Reference Include="Idibri.RevitPlugin.Common, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\revit-common\Idibri.RevitPlugin.Common\bin\Debug\Idibri.RevitPlugin.Common.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -225,6 +227,7 @@
     <Compile Include="Components\Exceptions.cs" />
     <Compile Include="Models\WorksetToCableScheduleMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetParams.cs" />
     <Compile Include="ViewModels\Editing\EditCommandSettingsViewModel.cs" />
     <Compile Include="ViewModels\Editing\EditElementsViewModel.cs" />
     <Compile Include="ViewModels\Editing\EditMasterViewModel.cs" />
