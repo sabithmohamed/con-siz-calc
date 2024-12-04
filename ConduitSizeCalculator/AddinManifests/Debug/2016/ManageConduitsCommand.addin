@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>\\Mac\Home\Projects\Idibri\revit-plugins\conduit-size-calculator\ConduitSizeCalculator\bin\Debug-2016\ConduitSizeCalculator.dll</Assembly>
+    <ClientId>F33FB724-0CF1-4062-908F-3756BFA80D86</ClientId>
+    <FullClassName>Idibri.RevitPlugin.ConduitSizeCalculator.ManageConduitsCommand</FullClassName>
+    <Text>Conduit Manager</Text>
+    <Description>Manage the conduits for all selected elements</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>IDB</VendorId>
+    <VendorDescription>Idibri, idibri.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

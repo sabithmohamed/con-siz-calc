@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.UnmatchedBoxReportingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="TheUserControl">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+
+      <conv:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter"/>
+      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleEqualToVisibleConverter" ComparisonType="Equal"/>
+      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleNotEqualToVisibleConverter" ComparisonType="NotEqual"/>
+      <conv:NullnessToVisibilityConverter x:Key="NullToVisibleConverter" Reversed="True" />
+      <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid Background="Transparent">
+    <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}"/>
+    <Grid Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
+      <TextBlock Text="No unmatched boxes found" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}"/>
+      <TreeView ItemsSource="{Binding JunctionBoxGroups}" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
+        <TreeView.ItemContainerStyle>
+          <Style TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded}"/>
+          </Style>
+        </TreeView.ItemContainerStyle>
+        <TreeView.ItemTemplate>
+          <HierarchicalDataTemplate ItemsSource="{Binding OffendingJunctionBoxes}">
+            <HierarchicalDataTemplate.ItemTemplate>
+              <HierarchicalDataTemplate ItemsSource="{Binding UnmatchedConduits}">
+                <HierarchicalDataTemplate.ItemTemplate>
+                  <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock MinWidth="30" Padding="0,0,5,0">
+                                    <Run Text="{Binding Index, Mode=OneWay}"/>
+                                    <Run Text="."/>
+                      </TextBlock>
+                      <TextBlock Text="{Binding Conduit.Name, Mode=OneWay}" MinWidth="100" Padding="0,0,5,0"/>
+                      <TextBlock Text="{Binding Destination, TargetNullValue='NONE SPECIFIED', Mode=OneWay}"/>
+                    </StackPanel>
+                  </DataTemplate>
+                </HierarchicalDataTemplate.ItemTemplate>
+                <StackPanel Orientation="Horizontal" Background="Transparent">
+                  <StackPanel.ContextMenu>
+                    <ContextMenu>
+                      <MenuItem Command="{Binding SelectElementCommand}" CommandParameter="{Binding}" Header="Show Element"/>
+                    </ContextMenu>
+                  </StackPanel.ContextMenu>
+                  <TextBlock Text="{Binding JunctionBox.Mark}"/>
+                  <TextBlock Text=" (Duplicate Mark)" Visibility="{Binding IsDuplicate, Converter={StaticResource TrueToVisibleConverter}}"/>
+                </StackPanel>
+              </HierarchicalDataTemplate>
+            </HierarchicalDataTemplate.ItemTemplate>
+            <TextBlock Text="{Binding Name, Mode=OneWay}"/>
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.ConduitScheduleEditingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid Background="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Row="0" Margin="0,0,0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="auto"/>
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Grid.Column="0" Orientation="Horizontal">
+        <TextBlock Text="Conduit Type" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <ComboBox ItemsSource="{Binding CommandSettings.ConduitSchedule.ConduitTypes}" SelectedItem="{Binding SelectedConduitType, Mode=TwoWay}"/>
+      </StackPanel>
+
+      <StackPanel Grid.Column="2" Orientation="Horizontal">
+        <TextBlock Text="New Conduit Type" Margin="0,0,5,0" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding NewConduitTypeName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+        <Button Command="{Binding CreateConduitTypeCommand}"
+                        ToolTipService.ToolTip="Create new Conduit Type">
+          <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/add.png" Width="16" Height="16"/>
+        </Button>
+      </StackPanel>
+    </Grid>
+
+    <DataGrid Grid.Row="1" x:Name="TheConduitScheduleDataGrid" SelectionChanged="TheConduitScheduleDataGrid_OnSelectionChanged"
+                  ItemsSource="{Binding ConduitsOfType}" SelectedItem="{Binding SelectedConduit, Mode=TwoWay}">
+      <DataGrid.Columns>
+        <DataGridTemplateColumn Header="Active?" IsReadOnly="True">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <CheckBox IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
+        <DataGridTextColumn Header="Trade Sz (in)" Binding="{Binding TradeSizeIn, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+        <DataGridTextColumn Header="Trade Sz (mm)" Binding="{Binding TradeSizeMm, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+        <DataGridTextColumn Header="ID (in)" Binding="{Binding InsideDiameterIn, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+        <DataGridTextColumn Header="ID (mm)" Binding="{Binding InsideDiameterMm, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+        <DataGridTextColumn Header="OD (in)" Binding="{Binding OutsideDiameterIn, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+        <DataGridTextColumn Header="OD (mm)" Binding="{Binding OutsideDiameterMm, Mode=TwoWay}" CellStyle="{StaticResource DataGridCellRightAlignStyle}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5,0,0">
+      <Button Command="{Binding CreateConduitCommand}"
+                    ToolTipService.ToolTip="Create new Conduit">
+        <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/add.png" Width="16" Height="16"/>
+      </Button>
+      <Button Command="{Binding DeleteConduitCommand}"
+                    ToolTipService.ToolTip="Delete selected Conduit">
+        <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/delete.png" Width="16" Height="16"/>
+      </Button>
+    </StackPanel>
+  </Grid>
+</UserControl>

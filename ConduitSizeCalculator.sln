@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConduitSizeCalculator", "ConduitSizeCalculator\ConduitSizeCalculator.csproj", "{F5CF4EE8-1A88-4989-8612-D441C3C160E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idibri.RevitPlugin.Common", "..\revit-plugin-common\Idibri.RevitPlugin.Common\Idibri.RevitPlugin.Common.csproj", "{5CFD61BD-4161-4310-9C8E-FD66F1259C08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug-2012|Any CPU = Debug-2012|Any CPU
+		Debug-2014|Any CPU = Debug-2014|Any CPU
+		Debug-2016|Any CPU = Debug-2016|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release-2012|Any CPU = Release-2012|Any CPU
+		Release-2014|Any CPU = Release-2014|Any CPU
+		Release-2016|Any CPU = Release-2016|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2012|Any CPU.ActiveCfg = Debug-2012|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2012|Any CPU.Build.0 = Debug-2012|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2014|Any CPU.ActiveCfg = Debug-2014|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2014|Any CPU.Build.0 = Debug-2014|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2016|Any CPU.ActiveCfg = Debug-2016|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Debug-2016|Any CPU.Build.0 = Debug-2016|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2012|Any CPU.ActiveCfg = Release-2012|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2012|Any CPU.Build.0 = Release-2012|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2014|Any CPU.ActiveCfg = Release-2014|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2014|Any CPU.Build.0 = Release-2014|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2016|Any CPU.ActiveCfg = Release-2016|Any CPU
+		{F5CF4EE8-1A88-4989-8612-D441C3C160E0}.Release-2016|Any CPU.Build.0 = Release-2016|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2012|Any CPU.ActiveCfg = Debug-2012|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2012|Any CPU.Build.0 = Debug-2012|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2014|Any CPU.ActiveCfg = Debug-2014|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2014|Any CPU.Build.0 = Debug-2014|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2016|Any CPU.ActiveCfg = Debug-2016|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Debug-2016|Any CPU.Build.0 = Debug-2016|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2012|Any CPU.ActiveCfg = Release-2012|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2012|Any CPU.Build.0 = Release-2012|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2014|Any CPU.ActiveCfg = Release-2014|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2014|Any CPU.Build.0 = Release-2014|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2016|Any CPU.ActiveCfg = Release-2016|Any CPU
+		{5CFD61BD-4161-4310-9C8E-FD66F1259C08}.Release-2016|Any CPU.Build.0 = Release-2016|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

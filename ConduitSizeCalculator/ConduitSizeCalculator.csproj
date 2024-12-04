@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5CF4EE8-1A88-4989-8612-D441C3C160E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConduitSizeCalculator</RootNamespace>
+    <AssemblyName>ConduitSizeCalculator</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <DebugEngines>
+	  {351668CC-8477-4fbf-BFE3-5F1006E4DB1F}
+	</DebugEngines>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2012|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-2012\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;REVIT2012</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2012|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug-2012\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;REVIT2012</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2014|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-2014\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;REVIT2014</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2014|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug-2014\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;REVIT2014</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2016|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-2016\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;REVIT2016</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-2016|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug-2016\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;REVIT2016</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2012|AnyCPU'">
+    <OutputPath>bin\Release-2012\</OutputPath>
+    <DefineConstants>TRACE;REVIT2012</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2012|x64'">
+    <OutputPath>bin\x64\Release-2012\</OutputPath>
+    <DefineConstants>TRACE;REVIT2012</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2014|AnyCPU'">
+    <OutputPath>bin\Release-2014\</OutputPath>
+    <DefineConstants>TRACE;REVIT2014</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2014|x64'">
+    <OutputPath>bin\x64\Release-2014\</OutputPath>
+    <DefineConstants>TRACE;REVIT2014</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2016|AnyCPU'">
+    <OutputPath>bin\Release-2016\</OutputPath>
+    <DefineConstants>TRACE;REVIT2016</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-2016|x64'">
+    <OutputPath>bin\x64\Release-2016\</OutputPath>
+    <DefineConstants>TRACE;REVIT2016</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug-2012' Or '$(Configuration)'=='Release-2012' ">
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit MEP 2012\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit MEP 2012\Program\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Idibri.RevitPlugin.Common">
+      <HintPath>..\..\..\..\..\OneDrive - BIM Integrated Services Private Limited\Desktop\Salas O'Brian\Revit Tool Update\Current Codebase\revit-common\Idibri.RevitPlugin.Common\bin\Debug\Idibri.RevitPlugin.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConduitCalculator.cs" />
+    <Compile Include="Models\Cable.cs" />
+    <Compile Include="Models\CableBundle.cs" />
+    <Compile Include="Models\CableBundleMember.cs" />
+    <Compile Include="Models\CableSchedule.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Models\CommandSettings.cs" />
+    <Compile Include="Models\Conduit.cs" />
+    <Compile Include="Models\ConduitFillRepresentation.cs" />
+    <Compile Include="Models\ConduitSchedule.cs" />
+    <Compile Include="Components\Exceptions.cs" />
+    <Compile Include="Models\WorksetToCableScheduleMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Editing\EditCommandSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Editing\EditElementsViewModel.cs" />
+    <Compile Include="ViewModels\Editing\EditMasterViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ExcessiveConduitAreaReportingViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\OversizedConduitReportingViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportingMasterViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\UnmatchedBoxReportingViewModel.cs" />
+    <Compile Include="Views\Editing\BoxEditingView.xaml.cs">
+      <DependentUpon>BoxEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\CableScheduleEditingView.xaml.cs">
+      <DependentUpon>CableScheduleEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\CommandSettingsEditingView.xaml.cs">
+      <DependentUpon>CommandSettingsEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\ConduitEditingView.xaml.cs">
+      <DependentUpon>ConduitEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\ConduitScheduleEditingView.xaml.cs">
+      <DependentUpon>ConduitScheduleEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\GeneralSettingsEditingView.xaml.cs">
+      <DependentUpon>GeneralSettingsEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\ExcessiveConduitAreaReportingView.xaml.cs">
+      <DependentUpon>ExcessiveConduitAreaReportingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\OversizedConduitsReportingView.xaml.cs">
+      <DependentUpon>OversizedConduitsReportingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\ReportingMasterView.xaml.cs">
+      <DependentUpon>ReportingMasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\UnmatchedBoxReportingView.xaml.cs">
+      <DependentUpon>UnmatchedBoxReportingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\WorksetToCableScheduleMapEditingView.xaml.cs">
+      <DependentUpon>WorksetToCableScheduleMapEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\ElementEditingView.xaml.cs">
+      <DependentUpon>ElementEditingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editing\EditMasterView.xaml.cs">
+      <DependentUpon>EditMasterView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Glyphicons\calculator.png" />
+    <Resource Include="Resources\Icons\Glyphicons\circle_minus.png" />
+    <Resource Include="Resources\Icons\Glyphicons\circle_ok.png" />
+    <Resource Include="Resources\Icons\Glyphicons\circle_plus.png" />
+    <Resource Include="Resources\Icons\Glyphicons\circle_remove.png" />
+    <Resource Include="Resources\Icons\Glyphicons\cogwheel.png" />
+    <Resource Include="Resources\Icons\Glyphicons\folder_open.png" />
+    <Resource Include="Resources\Icons\Glyphicons\more_items.png" />
+    <Resource Include="Resources\Icons\Glyphicons\refresh.png" />
+    <Resource Include="Resources\Icons\Glyphicons\sort.png" />
+    <Resource Include="Resources\Icons\Fam3\add.png" />
+    <Resource Include="Resources\Icons\Fam3\arrow_refresh.png" />
+    <Resource Include="Resources\Icons\Fam3\calculator.png" />
+    <Resource Include="Resources\Icons\Fam3\cog.png" />
+    <Resource Include="Resources\Icons\Fam3\cross.png" />
+    <Resource Include="Resources\Icons\Fam3\delete.png" />
+    <Resource Include="Resources\Icons\Fam3\disk.png" />
+    <Resource Include="Resources\Icons\Fam3\disk_multiple.png" />
+    <Resource Include="Resources\Icons\Fam3\folder_page_white.png" />
+    <Resource Include="Resources\Icons\Fam3\tick.png" />
+    <Content Include="AddinManifests\Debug\2012\ConduitReportingCommand.addin" />
+    <Content Include="AddinManifests\Debug\2012\ManageConduitsCommand.addin">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AddinManifests\Debug\2012\UpdateAllElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2012\UpdateSelectedElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2014\ConduitReportingCommand.addin" />
+    <Content Include="AddinManifests\Debug\2014\ManageConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2014\UpdateAllElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2014\UpdateSelectedElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2016\ConduitReportingCommand.addin" />
+    <Content Include="AddinManifests\Debug\2016\ManageConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2016\UpdateAllElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Debug\2016\UpdateSelectedElementsConduitsCommand.addin" />
+    <Content Include="AddinManifests\Production\ConduitReportingCommand.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AddinManifests\Production\UpdateAllElementsConduitsCommand.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AddinManifests\Production\ManageConduitsCommand.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\CommandSettings.xml" />
+    <Content Include="AddinManifests\Production\UpdateSelectedElementsConduitsCommand.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Editing\BoxEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\CableScheduleEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\CommandSettingsEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\ConduitEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\ConduitScheduleEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\GeneralSettingsEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\ExcessiveConduitAreaReportingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\OversizedConduitsReportingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\ReportingMasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\UnmatchedBoxReportingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\WorksetToCableScheduleMapEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\ElementEditingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editing\EditMasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

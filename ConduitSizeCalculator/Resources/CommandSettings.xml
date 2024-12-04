@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CableSchedule>
+    <Cables>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>A</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>HA210</StandardPartNumber>
+        <UnderGroundWetPartNumber>C210</UnderGroundWetPartNumber>
+        <PlenumPartNumber>25210</PlenumPartNumber>
+        <Application>Speaker</Application>
+        <Description>"1 PR #10 AWG Stranded Twisted Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.357</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>A8</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>HA208</StandardPartNumber>
+        <UnderGroundWetPartNumber>C208</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Speaker</Application>
+        <Description>"1 PR #8 AWG Stranded Twisted Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.357</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>A10</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>HA210</StandardPartNumber>
+        <UnderGroundWetPartNumber>C210</UnderGroundWetPartNumber>
+        <PlenumPartNumber>25210</PlenumPartNumber>
+        <Application>Speaker</Application>
+        <Description>"1 PR #10 AWG Stranded Twisted Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.357</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>A12</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>227</StandardPartNumber>
+        <UnderGroundWetPartNumber>AQ227</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Speaker</Application>
+        <Description>"1 PR #12 AWG Stranded Twisted PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.317</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.4</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>A14</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>226</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Speaker</Application>
+        <Description>"1 PR #14 AWG Stranded Twisted PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.255</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.5</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>B</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>HA210</StandardPartNumber>
+        <UnderGroundWetPartNumber>C210</UnderGroundWetPartNumber>
+        <PlenumPartNumber>25210</PlenumPartNumber>
+        <Application>Speaker</Application>
+        <Description>"1 PR #10 AWG Stranded Twisted Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.357</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.6</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>C</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>227</StandardPartNumber>
+        <UnderGroundWetPartNumber>AQ227</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Speaker</Application>
+        <Description>"1 PR #12 AWG Stranded Twisted PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.317</NominalOutsideDiameterIn>
+        <SignalGroup>C</SignalGroup>
+        <CostPerFoot>0.7</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>9451</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber>9451P</PlenumPartNumber>
+        <Application>Line Level Audio</Application>
+        <Description>"1 Shielded PR #22 AWG Stranded Twisted Green PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.138</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>0.8</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D4</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61804GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Line Level Audio</Application>
+        <Description>"4 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.4</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>0.9</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D6</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61806GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber>GA618006PEF</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Line Level Audio</Application>
+        <Description>"6 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.475</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D8</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61808GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Line Level Audio</Application>
+        <Description>"8 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.57</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>1.1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D12</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA618012GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber>GA618012PEF</UnderGroundWetPartNumber>
+        <PlenumPartNumber>6612HS</PlenumPartNumber>
+        <Application>Line Level Audio</Application>
+        <Description>"12 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.635</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>1.2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>D16</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA618016GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Line Level Audio</Application>
+        <Description>"16 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.71</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>1.3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>9451</StandardPartNumber>
+        <UnderGroundWetPartNumber>WP ACQ291</UnderGroundWetPartNumber>
+        <PlenumPartNumber>9451P</PlenumPartNumber>
+        <Application>Mic Level Audio</Application>
+        <Description>"1 Shielded PR #22 AWG Stranded Twisted Orange PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.138</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.4</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E4</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61804GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Mic Level Audio</Application>
+        <Description>"4 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.4</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.5</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E6</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61806GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Mic Level Audio</Application>
+        <Description>"6 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.475</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.6</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E8</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA61808GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Mic Level Audio</Application>
+        <Description>"8 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.57</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.7</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E12</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA618012GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber>GA618012PEF</UnderGroundWetPartNumber>
+        <PlenumPartNumber>6612HS</PlenumPartNumber>
+        <Application>Mic Level Audio</Application>
+        <Description>"12 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.635</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.8</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>E16</Name>
+        <Manufacturer>Gepco</Manufacturer>
+        <StandardPartNumber>GA618016GFC</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Mic Level Audio</Application>
+        <Description>"16 Shielded PR #22 AWG Stranded Twisted individually Jacketed Polyethylene Jacket CMR"</Description>
+        <NominalOutsideDiameterIn>0.71</NominalOutsideDiameterIn>
+        <SignalGroup>A</SignalGroup>
+        <CostPerFoot>1.9</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>F</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>7810A</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Antenna</Application>
+        <Description>"50 Ohm Coax #10 AWG RG-8"</Description>
+        <NominalOutsideDiameterIn>0.405</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>G</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>9311</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Antenna</Application>
+        <Description>"50 Ohm Coax #20 AWG RG-58"</Description>
+        <NominalOutsideDiameterIn>0.193</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>2.1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>H</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>1694A</StandardPartNumber>
+        <UnderGroundWetPartNumber>1829BC</UnderGroundWetPartNumber>
+        <PlenumPartNumber>1695A</PlenumPartNumber>
+        <Application>Digital Video</Application>
+        <Description>"75 Ohm Precision Video Cable #18 AWG"</Description>
+        <NominalOutsideDiameterIn>0.275</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>J</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>7712A</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Digital Video</Application>
+        <Description>"75 Ohm 5 Conductor #18 AWG"</Description>
+        <NominalOutsideDiameterIn>0.942</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>K</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>9116</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber>9116P</PlenumPartNumber>
+        <Application>MATV</Application>
+        <Description>"Series 6 #18 AWG MATV CABLE"</Description>
+        <NominalOutsideDiameterIn>0.27</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.4</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>L</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>9011</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>MATV</Application>
+        <Description>"Series 11 #14 AWG MATV CABLE"</Description>
+        <NominalOutsideDiameterIn>0.4</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.5</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>M</Name>
+        <Manufacturer>Liberty Cable</Manufacturer>
+        <StandardPartNumber>Cresnet</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Control</Application>
+        <Description>"2PR (1)PR #22AWG Twisted-Shielded (1) PR #18 AWG Twisted Overall PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.282</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.6</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>N</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>D439</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>Intercom</Application>
+        <Description>4 Pair #22 Stranded Shielded</Description>
+        <NominalOutsideDiameterIn>0.28</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>2.7</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>P</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>270</StandardPartNumber>
+        <UnderGroundWetPartNumber>WP ACQ369</UnderGroundWetPartNumber>
+        <PlenumPartNumber>25270B</PlenumPartNumber>
+        <Application>Control</Application>
+        <Description>"6 Conductor #22 AWG Stranded Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.217</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.8</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>Q</Name>
+        <Manufacturer>West Penn</Manufacturer>
+        <StandardPartNumber>234</StandardPartNumber>
+        <UnderGroundWetPartNumber>Bel 5302U1</UnderGroundWetPartNumber>
+        <PlenumPartNumber>25234B</PlenumPartNumber>
+        <Application>Control</Application>
+        <Description>"3 Conductor #18 AWG Stranded Jacketed"</Description>
+        <NominalOutsideDiameterIn>0.25</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>2.9</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>R</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>1419A</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber>88102</PlenumPartNumber>
+        <Application>Control-RS422</Application>
+        <Description>"2 Conductor #24 AWG Stranded Overall Shield"</Description>
+        <NominalOutsideDiameterIn>0.248</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>T</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>1857A</StandardPartNumber>
+        <UnderGroundWetPartNumber>Gepco VT61811PEF</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Camera</Application>
+        <Description>"75 ohm Superflex Triax Video Cable #22 AWG stranded"</Description>
+        <NominalOutsideDiameterIn>0.36</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>U</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>1700A</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber>1701A</PlenumPartNumber>
+        <Application>CAT5e Data</Application>
+        <Description>"4 PR #24 AG BONDED PAIR UTP CAT5e RJ45 Comp."</Description>
+        <NominalOutsideDiameterIn>0.204</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>V</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>HD2000</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>HDMI Cable</Application>
+        <Description>"#26 AWG HDMI"</Description>
+        <NominalOutsideDiameterIn>0.323</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>W</Name>
+        <Manufacturer>Corning</Manufacturer>
+        <StandardPartNumber>006E8P-31131-A3</StandardPartNumber>
+        <UnderGroundWetPartNumber>006E8F-31131-A3</UnderGroundWetPartNumber>
+        <PlenumPartNumber>006E8P-31131-A3</PlenumPartNumber>
+        <Application>Single Mode Fiber</Application>
+        <Description>Six Strand Singlemode Fiber</Description>
+        <NominalOutsideDiameterIn>0.24</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>X</Name>
+        <Manufacturer>Belden</Manufacturer>
+        <StandardPartNumber>1696A</StandardPartNumber>
+        <UnderGroundWetPartNumber>Custom TBD</UnderGroundWetPartNumber>
+        <PlenumPartNumber />
+        <Application>Digital Audio</Application>
+        <Description>"1 PR #22 AWG Stranded Twisted PVC Jacket"</Description>
+        <NominalOutsideDiameterIn>0.234</NominalOutsideDiameterIn>
+        <SignalGroup>B</SignalGroup>
+        <CostPerFoot>3.4</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>Y</Name>
+        <Manufacturer>Corning</Manufacturer>
+        <StandardPartNumber>006C8P-31131-A3</StandardPartNumber>
+        <UnderGroundWetPartNumber>006C8F-31131-A3</UnderGroundWetPartNumber>
+        <PlenumPartNumber>006C8P-31131-A3</PlenumPartNumber>
+        <Application>Multi-Mode Fiber</Application>
+        <Description>Six Strand Multimode Fiber</Description>
+        <NominalOutsideDiameterIn>0.24</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.5</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>AV</GroupName>
+        <Name>Z</Name>
+        <Manufacturer>Mohawk</Manufacturer>
+        <StandardPartNumber>M58141</StandardPartNumber>
+        <UnderGroundWetPartNumber>M58783</UnderGroundWetPartNumber>
+        <PlenumPartNumber>M58142</PlenumPartNumber>
+        <Application>Phone/Data Cable</Application>
+        <Description>"25 Pair Phone/Data Cable Plenum"</Description>
+        <NominalOutsideDiameterIn>0.435</NominalOutsideDiameterIn>
+        <SignalGroup>D</SignalGroup>
+        <CostPerFoot>3.6</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>LTG</GroupName>
+        <Name>A</Name>
+        <Manufacturer>BELDEN</Manufacturer>
+        <StandardPartNumber>1583A</StandardPartNumber>
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>DMX-512 or NETWORK CONTROL</Application>
+        <Description>"2 PR #24 AWG STRANDED TWISTED PVC JACKET"</Description>
+        <NominalOutsideDiameterIn>0.214</NominalOutsideDiameterIn>
+        <SignalGroup />
+        <CostPerFoot>1</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>LTG</GroupName>
+        <Name>B</Name>
+        <Manufacturer>MULTIPLE</Manufacturer>
+        <StandardPartNumber />
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>"ARCH CONTROL UNPOWERED"</Application>
+        <Description>1 BELDEN 8471 &amp; 1 CERROWIRE 112-1405 (GREEN)</Description>
+        <NominalOutsideDiameterIn>0.296</NominalOutsideDiameterIn>
+        <SignalGroup />
+        <CostPerFoot>2</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>LTG</GroupName>
+        <Name>C</Name>
+        <Manufacturer>MULTIPLE</Manufacturer>
+        <StandardPartNumber />
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>"ARCH CONTROL POWERED"</Application>
+        <Description>"1 BELDEN 8471 &amp; 1 CERROWIRE 112-1405 (GREEN) &amp; 2 CERROWIRE 113-12XX (BLACKRED)"</Description>
+        <NominalOutsideDiameterIn>0.329</NominalOutsideDiameterIn>
+        <SignalGroup />
+        <CostPerFoot>3</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+      <Cable>
+        <GroupName>LTG</GroupName>
+        <Name>D</Name>
+        <Manufacturer>MULTIPLE</Manufacturer>
+        <StandardPartNumber />
+        <UnderGroundWetPartNumber />
+        <PlenumPartNumber />
+        <Application>0-10 VOLT CONTROL</Application>
+        <Description>"2 CERROWIRE 113-12XX (BLACKRED)"</Description>
+        <NominalOutsideDiameterIn>0.143</NominalOutsideDiameterIn>
+        <SignalGroup />
+        <CostPerFoot>4</CostPerFoot>
+        <IsActive>true</IsActive>
+      </Cable>
+    </Cables>
+  </CableSchedule>
+  <ConduitSchedule>
+    <Conduits>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>1/2" EMT</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.622</InsideDiameterIn>
+        <InsideDiameterMm>15.8</InsideDiameterMm>
+        <OutsideDiameterIn>0.706</OutsideDiameterIn>
+        <OutsideDiameterMm>17.93</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>1/2" Intermediate</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.66</InsideDiameterIn>
+        <InsideDiameterMm>16.8</InsideDiameterMm>
+        <OutsideDiameterIn>0.815</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>1/2" Rigid</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.622</InsideDiameterIn>
+        <InsideDiameterMm>15.8</InsideDiameterMm>
+        <OutsideDiameterIn>0.84</OutsideDiameterIn>
+        <OutsideDiameterMm>21.34</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>1/2" Flexible</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.635</InsideDiameterIn>
+        <InsideDiameterMm>16.1</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1/2" PVC</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.622</InsideDiameterIn>
+        <InsideDiameterMm>15.8</InsideDiameterMm>
+        <OutsideDiameterIn>0.84</OutsideDiameterIn>
+        <OutsideDiameterMm>21.34</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1/2" PVC</Name>
+        <TradeSizeIn>0.5</TradeSizeIn>
+        <TradeSizeMm>16</TradeSizeMm>
+        <InsideDiameterIn>0.546</InsideDiameterIn>
+        <InsideDiameterMm>13.87</InsideDiameterMm>
+        <OutsideDiameterIn>0.84</OutsideDiameterIn>
+        <OutsideDiameterMm>21.34</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>3/4" EMT</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.824</InsideDiameterIn>
+        <InsideDiameterMm>20.93</InsideDiameterMm>
+        <OutsideDiameterIn>0.922</OutsideDiameterIn>
+        <OutsideDiameterMm>23.42</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>3/4" Intermediate</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.864</InsideDiameterIn>
+        <InsideDiameterMm>21.9</InsideDiameterMm>
+        <OutsideDiameterIn>1.029</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>3/4" Rigid</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.824</InsideDiameterIn>
+        <InsideDiameterMm>20.93</InsideDiameterMm>
+        <OutsideDiameterIn>1.05</OutsideDiameterIn>
+        <OutsideDiameterMm>26.67</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>3/4" Flexible</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.824</InsideDiameterIn>
+        <InsideDiameterMm>20.9</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>3/4" PVC</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.824</InsideDiameterIn>
+        <InsideDiameterMm>20.93</InsideDiameterMm>
+        <OutsideDiameterIn>1.05</OutsideDiameterIn>
+        <OutsideDiameterMm>26.67</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>3/4" PVC</Name>
+        <TradeSizeIn>0.75</TradeSizeIn>
+        <TradeSizeMm>21</TradeSizeMm>
+        <InsideDiameterIn>0.742</InsideDiameterIn>
+        <InsideDiameterMm>18.85</InsideDiameterMm>
+        <OutsideDiameterIn>1.05</OutsideDiameterIn>
+        <OutsideDiameterMm>26.67</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>1" EMT</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>1.049</InsideDiameterIn>
+        <InsideDiameterMm>26.64</InsideDiameterMm>
+        <OutsideDiameterIn>1.163</OutsideDiameterIn>
+        <OutsideDiameterMm>29.54</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>1" Intermediate</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>1.12</InsideDiameterIn>
+        <InsideDiameterMm>28.1</InsideDiameterMm>
+        <OutsideDiameterIn>1.29</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>1" Rigid</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>1.049</InsideDiameterIn>
+        <InsideDiameterMm>26.64</InsideDiameterMm>
+        <OutsideDiameterIn>1.315</OutsideDiameterIn>
+        <OutsideDiameterMm>33.4</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>1" Flexible</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>1.02</InsideDiameterIn>
+        <InsideDiameterMm>25.9</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1" PVC</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>1.049</InsideDiameterIn>
+        <InsideDiameterMm>26.64</InsideDiameterMm>
+        <OutsideDiameterIn>1.315</OutsideDiameterIn>
+        <OutsideDiameterMm>33.4</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1" PVC</Name>
+        <TradeSizeIn>1</TradeSizeIn>
+        <TradeSizeMm>27</TradeSizeMm>
+        <InsideDiameterIn>0.957</InsideDiameterIn>
+        <InsideDiameterMm>24.31</InsideDiameterMm>
+        <OutsideDiameterIn>1.315</OutsideDiameterIn>
+        <OutsideDiameterMm>33.4</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>1 1/4" EMT</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.38</InsideDiameterIn>
+        <InsideDiameterMm>35.05</InsideDiameterMm>
+        <OutsideDiameterIn>1.51</OutsideDiameterIn>
+        <OutsideDiameterMm>38.35</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>1 1/4" Intermediate</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.468</InsideDiameterIn>
+        <InsideDiameterMm>36.8</InsideDiameterMm>
+        <OutsideDiameterIn>1.638</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>1 1/4" Rigid</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.38</InsideDiameterIn>
+        <InsideDiameterMm>35.05</InsideDiameterMm>
+        <OutsideDiameterIn>1.66</OutsideDiameterIn>
+        <OutsideDiameterMm>42.16</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>1 1/4" Flexible</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.275</InsideDiameterIn>
+        <InsideDiameterMm>32.4</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1 1/4" PVC</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.38</InsideDiameterIn>
+        <InsideDiameterMm>35.05</InsideDiameterMm>
+        <OutsideDiameterIn>1.66</OutsideDiameterIn>
+        <OutsideDiameterMm>42.16</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1 1/4" PVC</Name>
+        <TradeSizeIn>1.25</TradeSizeIn>
+        <TradeSizeMm>35</TradeSizeMm>
+        <InsideDiameterIn>1.278</InsideDiameterIn>
+        <InsideDiameterMm>32.46</InsideDiameterMm>
+        <OutsideDiameterIn>1.66</OutsideDiameterIn>
+        <OutsideDiameterMm>42.16</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>1 1/2" EMT</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.61</InsideDiameterIn>
+        <InsideDiameterMm>40.89</InsideDiameterMm>
+        <OutsideDiameterIn>1.74</OutsideDiameterIn>
+        <OutsideDiameterMm>44.2</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>1 1/2" Intermediate</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.703</InsideDiameterIn>
+        <InsideDiameterMm>42.7</InsideDiameterMm>
+        <OutsideDiameterIn>1.883</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>1 1/2" Rigid</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.61</InsideDiameterIn>
+        <InsideDiameterMm>40.89</InsideDiameterMm>
+        <OutsideDiameterIn>1.9</OutsideDiameterIn>
+        <OutsideDiameterMm>42.86</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>1 1/2" Flexible</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.538</InsideDiameterIn>
+        <InsideDiameterMm>39.1</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1 1/2" PVC</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.61</InsideDiameterIn>
+        <InsideDiameterMm>40.89</InsideDiameterMm>
+        <OutsideDiameterIn>1.9</OutsideDiameterIn>
+        <OutsideDiameterMm>48.26</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>1 1/2" PVC</Name>
+        <TradeSizeIn>1.5</TradeSizeIn>
+        <TradeSizeMm>41</TradeSizeMm>
+        <InsideDiameterIn>1.5</InsideDiameterIn>
+        <InsideDiameterMm>38.1</InsideDiameterMm>
+        <OutsideDiameterIn>1.9</OutsideDiameterIn>
+        <OutsideDiameterMm>48.26</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>2" EMT</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>2.067</InsideDiameterIn>
+        <InsideDiameterMm>52.5</InsideDiameterMm>
+        <OutsideDiameterIn>2.197</OutsideDiameterIn>
+        <OutsideDiameterMm>55.8</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>2" Intermediate</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>2.17</InsideDiameterIn>
+        <InsideDiameterMm>54.6</InsideDiameterMm>
+        <OutsideDiameterIn>2.36</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>2" Rigid</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>2.067</InsideDiameterIn>
+        <InsideDiameterMm>52.5</InsideDiameterMm>
+        <OutsideDiameterIn>2.375</OutsideDiameterIn>
+        <OutsideDiameterMm>60.33</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>2" Flexible</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>2.04</InsideDiameterIn>
+        <InsideDiameterMm>51.8</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>2" PVC</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>2.067</InsideDiameterIn>
+        <InsideDiameterMm>52.5</InsideDiameterMm>
+        <OutsideDiameterIn>2.375</OutsideDiameterIn>
+        <OutsideDiameterMm>60.33</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>2" PVC</Name>
+        <TradeSizeIn>2</TradeSizeIn>
+        <TradeSizeMm>53</TradeSizeMm>
+        <InsideDiameterIn>1.939</InsideDiameterIn>
+        <InsideDiameterMm>49.25</InsideDiameterMm>
+        <OutsideDiameterIn>2.375</OutsideDiameterIn>
+        <OutsideDiameterMm>60.33</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>2 1/2" EMT</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.731</InsideDiameterIn>
+        <InsideDiameterMm>69.4</InsideDiameterMm>
+        <OutsideDiameterIn>2.875</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>2 1/2" Intermediate</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.597</InsideDiameterIn>
+        <InsideDiameterMm>64.9</InsideDiameterMm>
+        <OutsideDiameterIn>2.857</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>2 1/2" Rigid</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.469</InsideDiameterIn>
+        <InsideDiameterMm>62.71</InsideDiameterMm>
+        <OutsideDiameterIn>2.875</OutsideDiameterIn>
+        <OutsideDiameterMm>73.03</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>2 1/2" Flexible</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.5</InsideDiameterIn>
+        <InsideDiameterMm>63.5</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>2 1/2" PVC</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.469</InsideDiameterIn>
+        <InsideDiameterMm>62.71</InsideDiameterMm>
+        <OutsideDiameterIn>2.875</OutsideDiameterIn>
+        <OutsideDiameterMm>73.03</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>2 1/2" PVC</Name>
+        <TradeSizeIn>2.5</TradeSizeIn>
+        <TradeSizeMm>63</TradeSizeMm>
+        <InsideDiameterIn>2.323</InsideDiameterIn>
+        <InsideDiameterMm>59</InsideDiameterMm>
+        <OutsideDiameterIn>2.875</OutsideDiameterIn>
+        <OutsideDiameterMm>73.03</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>3" EMT</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>3.356</InsideDiameterIn>
+        <InsideDiameterMm>85.24</InsideDiameterMm>
+        <OutsideDiameterIn>3.5</OutsideDiameterIn>
+        <OutsideDiameterMm>88.9</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>3" Intermediate</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>3.216</InsideDiameterIn>
+        <InsideDiameterMm>80.7</InsideDiameterMm>
+        <OutsideDiameterIn>3.476</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>3" Rigid</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>3.068</InsideDiameterIn>
+        <InsideDiameterMm>77.93</InsideDiameterMm>
+        <OutsideDiameterIn>3.5</OutsideDiameterIn>
+        <OutsideDiameterMm>88.9</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>3" Flexible</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>3</InsideDiameterIn>
+        <InsideDiameterMm>76.2</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>3" PVC</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>3.068</InsideDiameterIn>
+        <InsideDiameterMm>77.93</InsideDiameterMm>
+        <OutsideDiameterIn>3.5</OutsideDiameterIn>
+        <OutsideDiameterMm>88.9</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>3" PVC</Name>
+        <TradeSizeIn>3</TradeSizeIn>
+        <TradeSizeMm>78</TradeSizeMm>
+        <InsideDiameterIn>2.9</InsideDiameterIn>
+        <InsideDiameterMm>73.66</InsideDiameterMm>
+        <OutsideDiameterIn>3.5</OutsideDiameterIn>
+        <OutsideDiameterMm>88.9</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>3 1/2" EMT</Name>
+        <TradeSizeIn>3.5</TradeSizeIn>
+        <TradeSizeMm>91</TradeSizeMm>
+        <InsideDiameterIn>3.834</InsideDiameterIn>
+        <InsideDiameterMm>97.4</InsideDiameterMm>
+        <OutsideDiameterIn>4</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>3 1/2" Intermediate</Name>
+        <TradeSizeIn>3.5</TradeSizeIn>
+        <TradeSizeMm>91</TradeSizeMm>
+        <InsideDiameterIn>3.671</InsideDiameterIn>
+        <InsideDiameterMm>93.2</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>3 1/2" Rigid</Name>
+        <TradeSizeIn>3.5</TradeSizeIn>
+        <TradeSizeMm>91</TradeSizeMm>
+        <InsideDiameterIn>3.548</InsideDiameterIn>
+        <InsideDiameterMm>90.12</InsideDiameterMm>
+        <OutsideDiameterIn>4</OutsideDiameterIn>
+        <OutsideDiameterMm>101.6</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>3 1/2" Flexible</Name>
+        <TradeSizeIn>3.5</TradeSizeIn>
+        <TradeSizeMm>91</TradeSizeMm>
+        <InsideDiameterIn>3.5</InsideDiameterIn>
+        <InsideDiameterMm>88.9</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>3 1/2" PVC</Name>
+        <TradeSizeIn>3.5</TradeSizeIn>
+        <TradeSizeMm>91</TradeSizeMm>
+        <InsideDiameterIn>3.548</InsideDiameterIn>
+        <InsideDiameterMm>90.12</InsideDiameterMm>
+        <OutsideDiameterIn>4</OutsideDiameterIn>
+        <OutsideDiameterMm>101.6</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>EMT</Type>
+        <Name>4" EMT</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>4.334</InsideDiameterIn>
+        <InsideDiameterMm>110.08</InsideDiameterMm>
+        <OutsideDiameterIn>4.5</OutsideDiameterIn>
+        <OutsideDiameterMm>114.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Intermediate</Type>
+        <Name>4" Intermediate</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>4.166</InsideDiameterIn>
+        <InsideDiameterMm>105.4</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Rigid</Type>
+        <Name>4" Rigid</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>4.026</InsideDiameterIn>
+        <InsideDiameterMm>102.26</InsideDiameterMm>
+        <OutsideDiameterIn>4.5</OutsideDiameterIn>
+        <OutsideDiameterMm>114.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>Flexible</Type>
+        <Name>4" Flexible</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>4</InsideDiameterIn>
+        <InsideDiameterMm>101.6</InsideDiameterMm>
+        <OutsideDiameterIn>0</OutsideDiameterIn>
+        <OutsideDiameterMm>0</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>4" PVC</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>4.026</InsideDiameterIn>
+        <InsideDiameterMm>102.26</InsideDiameterMm>
+        <OutsideDiameterIn>4.5</OutsideDiameterIn>
+        <OutsideDiameterMm>114.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>4" PVC</Name>
+        <TradeSizeIn>4</TradeSizeIn>
+        <TradeSizeMm>103</TradeSizeMm>
+        <InsideDiameterIn>3.826</InsideDiameterIn>
+        <InsideDiameterMm>97.18</InsideDiameterMm>
+        <OutsideDiameterIn>4.5</OutsideDiameterIn>
+        <OutsideDiameterMm>114.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>5" PVC</Name>
+        <TradeSizeIn>5</TradeSizeIn>
+        <TradeSizeMm>0</TradeSizeMm>
+        <InsideDiameterIn>5.047</InsideDiameterIn>
+        <InsideDiameterMm>128.19</InsideDiameterMm>
+        <OutsideDiameterIn>5.563</OutsideDiameterIn>
+        <OutsideDiameterMm>141.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>5" PVC</Name>
+        <TradeSizeIn>5</TradeSizeIn>
+        <TradeSizeMm>0</TradeSizeMm>
+        <InsideDiameterIn>4.813</InsideDiameterIn>
+        <InsideDiameterMm>122.25</InsideDiameterMm>
+        <OutsideDiameterIn>5.563</OutsideDiameterIn>
+        <OutsideDiameterMm>141.3</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>6" PVC</Name>
+        <TradeSizeIn>6</TradeSizeIn>
+        <TradeSizeMm>0</TradeSizeMm>
+        <InsideDiameterIn>6.065</InsideDiameterIn>
+        <InsideDiameterMm>154.05</InsideDiameterMm>
+        <OutsideDiameterIn>6.625</OutsideDiameterIn>
+        <OutsideDiameterMm>168.28</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+      <Conduit>
+        <Type>PVC</Type>
+        <Name>6" PVC</Name>
+        <TradeSizeIn>6</TradeSizeIn>
+        <TradeSizeMm>0</TradeSizeMm>
+        <InsideDiameterIn>5.761</InsideDiameterIn>
+        <InsideDiameterMm>146.33</InsideDiameterMm>
+        <OutsideDiameterIn>6.625</OutsideDiameterIn>
+        <OutsideDiameterMm>168.28</OutsideDiameterMm>
+        <IsActive>true</IsActive>
+      </Conduit>
+    </Conduits>
+  </ConduitSchedule>
+  <DefaultMaxCableAreaPercent>0.3</DefaultMaxCableAreaPercent>
+  <DefaultConduitType>EMT</DefaultConduitType>
+</CommandSettings>

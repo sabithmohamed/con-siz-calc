@@ -1,0 +1,14 @@
+[oO]bj/
+[bB]in/
+Generated_Code/
+Data/
+# *.user
+*.cache
+*~
+*.swp
+*.exe
+*.msi
+.tmp_proj
+*.g.*
+*.xap
+*.suo

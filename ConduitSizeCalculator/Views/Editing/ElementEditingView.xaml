@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.ElementEditingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Idibri.RevitPlugin.ConduitSizeCalculator.Views"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Specific Styles -->
+            <Style x:Key="ColumnHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="RowHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                <Setter Property="Margin" Value="0,0,5,0"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Style="{StaticResource RowHeaderStyle}" Text="Workset" HorizontalAlignment="Left" Margin="42,0,0,0"/>
+                <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding CommandSettings.WorksetToCableScheduleMap.Pairs}" DisplayMemberPath="WorksetName" SelectedItem="{Binding WorksetCableSchedulePair, Mode=TwoWay}"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource RowHeaderStyle}" Text="Cable Schedule"/>
+                <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding CommandSettings.CableSchedule.CableGroups}" SelectedItem="{Binding WorksetCableSchedulePair.CableSchedule, Mode=TwoWay}"/>
+            </Grid>
+
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="Fill"/>
+                <TextBlock Grid.Column="3" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="Conduit Type"/>
+                <TextBlock Grid.Column="5" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="Size"/>
+                <TextBlock Grid.Column="7" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="Conduit Destination"/>
+                <TextBlock Grid.Column="9" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="Cable Destination"/>
+                <TextBlock Grid.Column="11" Grid.Row="0" Style="{StaticResource ColumnHeaderStyle}" Text="% Full"/>
+
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="12" DataContext="{Binding Conduit1}" RowHeader="1"/>
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="12" DataContext="{Binding Conduit2}" RowHeader="2" Loaded="ConduitEditingView_Loaded"/>
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="12" DataContext="{Binding Conduit3}" RowHeader="3"/>
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="12" DataContext="{Binding Conduit4}" RowHeader="4"/>
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="12" DataContext="{Binding Conduit5}" RowHeader="5" />
+                <view:ConduitEditingView Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="12" DataContext="{Binding Conduit6}" RowHeader="6" />
+            </Grid>
+
+            <view:BoxEditingView Grid.Column="0" Grid.Row="2" DataContext="{Binding BoxViewModel}" Margin="0,15"/>
+
+            <Grid Grid.Column="0" Grid.Row="3" Margin="0,3,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+                    <Run Text="{Binding Elements.Count, Mode=OneWay}"/>
+                    <Run Text=" Element(s)"/>
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

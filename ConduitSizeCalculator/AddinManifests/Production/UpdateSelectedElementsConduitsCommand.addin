@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ConduitSizeCalculator.dll</Assembly>
+    <ClientId>457B3732-08DB-4156-8AF6-678BABEE3ED3</ClientId>
+    <FullClassName>Idibri.RevitPlugin.ConduitSizeCalculator.UpdateSelectedElementsConduitsCommand</FullClassName>
+    <Text>Calculate Selected Conduits</Text>
+    <Description>Calculate conduit sizes for all selected elements.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>IDB</VendorId>
+    <VendorDescription>Idibri, idibri.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

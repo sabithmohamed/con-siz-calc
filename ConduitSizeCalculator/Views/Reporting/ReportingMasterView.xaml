@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.ReportingMasterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Idibri.RevitPlugin.ConduitSizeCalculator.Views"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Border Background="#F0F0F0" Padding="5">
+    <Grid MinHeight="300">
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+
+      <TabControl Grid.Column="0" Grid.Row="0">
+        <TabItem Header="Oversized Conduits">
+          <view:OversizedConduitsReportingView DataContext="{Binding OversizedConduitsReportingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Unmatched Boxes">
+          <view:UnmatchedBoxReportingView DataContext="{Binding UnmatchedBoxReportingViewModel}"/>
+        </TabItem>
+        <TabItem Header="Insufficient Conduit Area">
+          <view:ExcessiveConduitAreaReportingView DataContext="{Binding ExcessiveConduitAreaReportingViewModel}"/>
+        </TabItem>
+      </TabControl>
+
+      <Grid Grid.Row="1" Margin="0,5,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" VerticalAlignment="Center">
+                <Run Text="{Binding JunctionBoxes.Count, Mode=OneWay}"/>
+                <Run Text=" Element(s)"/>
+        </TextBlock>
+
+        <StackPanel Grid.Column="1">
+          <Button Command="{Binding RefreshCommand}"
+                        ToolTipService.ToolTip="Refresh the reports">
+            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/arrow_refresh.png" Width="16" Height="16"/>
+          </Button>
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>
