@@ -1,85 +1,174 @@
-﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.BoxEditingView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d">
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
+﻿<UserControl
+    x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.BoxEditingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
-      <Style x:Key="RowHeaderStyle" TargetType="TextBlock">
-        <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="0,0,10,0"/>
-      </Style>
-      <Style x:Key="ColumnHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
-        <Setter Property="Margin" Value="0,0,0,5"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-      </Style>
-    </ResourceDictionary>
-  </UserControl.Resources>
-  <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="125"/>
-      <ColumnDefinition Width="125"/>
-      <ColumnDefinition Width="15"/>
-      <ColumnDefinition Width="125"/>
-      <ColumnDefinition Width="15"/>
-      <ColumnDefinition Width="125"/>
-      <ColumnDefinition Width="15"/>
-      <ColumnDefinition Width="125"/>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="15"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="15"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="15"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-    </Grid.RowDefinitions>
+            <Style x:Key="RowHeaderStyle" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="0,0,10,0" />
+            </Style>
+            <Style
+                x:Key="ColumnHeaderStyle"
+                BasedOn="{StaticResource TextBlockBaseStyle}"
+                TargetType="TextBlock">
+                <Setter Property="Margin" Value="0,0,0,5" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125" />
+            <ColumnDefinition Width="125" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="125" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="125" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="125" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
 
-    <CheckBox Grid.Column="0" Grid.Row="1" Content="Update" IsChecked="{Binding UpdateBoxProperties, Mode=TwoWay}" HorizontalAlignment="Left"/>
+        <CheckBox
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Content="Update"
+            IsChecked="{Binding UpdateBoxProperties, Mode=TwoWay}" />
 
-    <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource ColumnHeaderStyle}" Text="Back Box"/>
-    <TextBlock Grid.Column="3" Grid.Row="1" Style="{StaticResource ColumnHeaderStyle}" Text="Panel"/>
-    <TextBlock Grid.Column="5" Grid.Row="1" Style="{StaticResource ColumnHeaderStyle}" Text="Device"/>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Style="{StaticResource ColumnHeaderStyle}"
+            Text="Back Box" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="3"
+            Style="{StaticResource ColumnHeaderStyle}"
+            Text="Panel" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="5"
+            Style="{StaticResource ColumnHeaderStyle}"
+            Text="Device" />
 
-    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource RowHeaderStyle}" Text="Provided By"/>
-    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding BackBoxProvidedBy, Mode=TwoWay}"/>
-    <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding PanelProvidedBy, Mode=TwoWay}"/>
-    <TextBox Grid.Column="5" Grid.Row="2" Text="{Binding DeviceProvidedBy, Mode=TwoWay}"/>
-    
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource RowHeaderStyle}"
+            Text="Provided By" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding BackBoxProvidedBy, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="3"
+            Text="{Binding PanelProvidedBy, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="5"
+            Text="{Binding DeviceProvidedBy, Mode=TwoWay}" />
 
-    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource RowHeaderStyle}" Text="Installed By"/>
-    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding BackBoxInstalledBy, Mode=TwoWay}"/>
-    <TextBox Grid.Column="3" Grid.Row="3" Text="{Binding PanelInstalledBy, Mode=TwoWay}"/>
-    <TextBox Grid.Column="5" Grid.Row="3" Text="{Binding DeviceInstalledBy, Mode=TwoWay}"/>
 
-    <!-- Space -->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Style="{StaticResource RowHeaderStyle}"
+            Text="Installed By" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding BackBoxInstalledBy, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="3"
+            Text="{Binding PanelInstalledBy, Mode=TwoWay}" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="5"
+            Text="{Binding DeviceInstalledBy, Mode=TwoWay}" />
 
-    <CheckBox Grid.Column="0" Grid.Row="5" Content="Update" IsChecked="{Binding UpdateFlags, Mode=TwoWay}" HorizontalAlignment="Left"/>
-    <CheckBox Grid.Column="1" Grid.Row="5" Content="Custom Panel" IsChecked="{Binding IsCustomPanel, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-    <CheckBox Grid.Column="3" Grid.Row="5" Content="Flush Mount" IsChecked="{Binding IsFlushMount, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-    
-    <!-- Space -->
+        <!--  Space  -->
 
-    <CheckBox Grid.Column="0" Grid.Row="7" Content="Update" IsChecked="{Binding UpdateNemaType, Mode=TwoWay}" HorizontalAlignment="Left"/>
-    <TextBlock Grid.Column="0" Grid.Row="8" Style="{StaticResource RowHeaderStyle}" Text="NEMA Type"/>
-    <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding NemaType, Mode=TwoWay}"/>
-    
-    <!-- Space -->
-    
-    <CheckBox Grid.Column="0" Grid.Row="10" Content="Update" IsChecked="{Binding UpdateNotes, Mode=TwoWay}" HorizontalAlignment="Left"/>
-    <TextBlock Grid.Column="0" Grid.Row="11" Style="{StaticResource RowHeaderStyle}" Text="Notes"/>
-    <TextBox Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="7" Text="{Binding Notes, Mode=TwoWay}"/>
-  </Grid>
+        <CheckBox
+            Grid.Row="5"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Content="Update"
+            IsChecked="{Binding UpdateFlags, Mode=TwoWay}" />
+        <CheckBox
+            Grid.Row="5"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="Custom Panel"
+            IsChecked="{Binding IsCustomPanel, Mode=TwoWay}" />
+        <CheckBox
+            Grid.Row="5"
+            Grid.Column="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="Flush Mount"
+            IsChecked="{Binding IsFlushMount, Mode=TwoWay}" />
+
+        <!--  Space  -->
+
+        <CheckBox
+            Grid.Row="7"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Content="Update"
+            IsChecked="{Binding UpdateNemaType, Mode=TwoWay}" />
+        <TextBlock
+            Grid.Row="8"
+            Grid.Column="0"
+            Style="{StaticResource RowHeaderStyle}"
+            Text="NEMA Type" />
+        <TextBox
+            Grid.Row="8"
+            Grid.Column="1"
+            Text="{Binding NemaType, Mode=TwoWay}" />
+
+        <!--  Space  -->
+
+        <CheckBox
+            Grid.Row="10"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Content="Update"
+            IsChecked="{Binding UpdateNotes, Mode=TwoWay}" />
+        <TextBlock
+            Grid.Row="11"
+            Grid.Column="0"
+            Style="{StaticResource RowHeaderStyle}"
+            Text="Notes" />
+        <TextBox
+            Grid.Row="11"
+            Grid.Column="1"
+            Grid.ColumnSpan="7"
+            Text="{Binding Notes, Mode=TwoWay}" />
+    </Grid>
 </UserControl>

@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Windows;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Selection;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Idibri.RevitPlugin.Common;
 using Idibri.RevitPlugin.Common.Infrastructure;
 using Idibri.RevitPlugin.ConduitSizeCalculator.Models;
@@ -58,15 +63,16 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
             }
         }
-        private CommandSettings _commandSettings;
 
+        private CommandSettings _commandSettings;
+        public UIDocument _uiDoc_master;
         public EditElementsViewModel EditElementsViewModel
         {
             get
             {
                 if (_editElementsViewModel == null)
                 {
-                    EditElementsViewModel = new EditElementsViewModel(CommandSettings, ConduitUpdater, null);
+                    EditElementsViewModel = new EditElementsViewModel(CommandSettings, ConduitUpdater, null, _uiDoc_master);
                 }
                 return _editElementsViewModel;
             }
@@ -386,13 +392,15 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         #endregion
 
         #region Constructors
-        public EditMasterViewModel(CommandSettings commandSettings, IConduitCalculator conduitUpdater, ViewModelIoc viewModelIoc)
+        public EditMasterViewModel(CommandSettings commandSettings, IConduitCalculator conduitUpdater, ViewModelIoc viewModelIoc, UIDocument uiDoc)
             : base()
         {
             ConduitUpdater = conduitUpdater;
             ViewModelIoc = viewModelIoc;
+            _uiDoc_master = uiDoc;
             CommandSettings = commandSettings;
         }
+
         #endregion
 
         #region Methods

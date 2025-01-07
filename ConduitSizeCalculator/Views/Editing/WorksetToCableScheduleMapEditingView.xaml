@@ -1,28 +1,44 @@
-﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.WorksetToCableScheduleMapEditingView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-  <Grid Background="Transparent">
-    <!-- NOTE: The following stuff with ProxyElement is what I had to do in order to bind the DataGridComboBoxColumn to the DataContext
-                   of the parent element. It's hacky, but seems to work. I got this from:
-                   http://stackoverflow.com/questions/7660967/wpf-error-cannot-find-govering-frameworkelement-for-target-element -->
-    <Grid.Resources>
-      <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
-    </Grid.Resources>
-    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
+﻿<UserControl
+    x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.WorksetToCableScheduleMapEditingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Grid Background="Transparent">
+        <!--
+            NOTE: The following stuff with ProxyElement is what I had to do in order to bind the DataGridComboBoxColumn to the DataContext
+            of the parent element. It's hacky, but seems to work. I got this from:
+            http://stackoverflow.com/questions/7660967/wpf-error-cannot-find-govering-frameworkelement-for-target-element
+        -->
+        <Grid.Resources>
+            <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}" />
+        </Grid.Resources>
+        <ContentControl Content="{StaticResource ProxyElement}" Visibility="Collapsed" />
 
-    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding CommandSettings.WorksetToCableScheduleMap.Pairs}"
-                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
-                  CanUserSortColumns="True">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Workset" Binding="{Binding WorksetName, Mode=OneWay}" Width="*" IsReadOnly="True" />
-        <DataGridComboBoxColumn Header="Cable Schedule" Width="*"
-                                        ItemsSource="{Binding DataContext.CommandSettings.CableSchedule.CableGroups, Source={StaticResource ProxyElement}}"
-                                        SelectedItemBinding="{Binding CableSchedule, Mode=TwoWay}"/>
-      </DataGrid.Columns>
-    </DataGrid>
-  </Grid>
+        <DataGrid
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserReorderColumns="False"
+            CanUserResizeColumns="False"
+            CanUserResizeRows="False"
+            CanUserSortColumns="True"
+            ItemsSource="{Binding CommandSettings.WorksetToCableScheduleMap.Pairs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding WorksetName, Mode=OneWay}"
+                    Header="Workset"
+                    IsReadOnly="True" />
+                <DataGridComboBoxColumn
+                    Width="*"
+                    Header="Cable Schedule"
+                    ItemsSource="{Binding DataContext.CommandSettings.CableSchedule.CableGroups, Source={StaticResource ProxyElement}}"
+                    SelectedItemBinding="{Binding CableSchedule, Mode=TwoWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </UserControl>

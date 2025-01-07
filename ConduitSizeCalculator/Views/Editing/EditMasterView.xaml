@@ -1,120 +1,176 @@
-﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.EditMasterView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:view="clr-namespace:Idibri.RevitPlugin.ConduitSizeCalculator.Views"
-             xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
-             xmlns:uc="clr-namespace:Idibri.RevitPlugin.Common.UserControls;assembly=Idibri.RevitPlugin.Common"
-             mc:Ignorable="d">
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
+﻿<UserControl
+    x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.EditMasterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:Idibri.RevitPlugin.Common.UserControls;assembly=Idibri.RevitPlugin.Common"
+    xmlns:view="clr-namespace:Idibri.RevitPlugin.ConduitSizeCalculator.Views"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
-      <conv:StringEqualityToVisibilityConverter x:Key="StringEqualityToVisibleConverter"/>
-      <conv:StringEqualityToVisibilityConverter x:Key="StringNonEqualityToVisibleConverter" Reversed="True"/>
-      <conv:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter"/>
-      <conv:BooleanToVisibilityConverter x:Key="FalseToVisibleConverter" Reversed="True"/>
-      <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter"/>
-    </ResourceDictionary>
-  </UserControl.Resources>
-  <Border Background="#F0F0F0" Padding="5">
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition/>
-        <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
-      </Grid.RowDefinitions>
+            <conv:StringEqualityToVisibilityConverter x:Key="StringEqualityToVisibleConverter" />
+            <conv:StringEqualityToVisibilityConverter x:Key="StringNonEqualityToVisibleConverter" Reversed="True" />
+            <conv:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter" />
+            <conv:BooleanToVisibilityConverter x:Key="FalseToVisibleConverter" Reversed="True" />
+            <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Padding="5" Background="#F0F0F0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
 
-      <Border Grid.Row="0" Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
-        <view:ElementEditingView DataContext="{Binding EditElementsViewModel}" />
-      </Border>
+            <Border Grid.Row="0" Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
+                <view:ElementEditingView DataContext="{Binding EditElementsViewModel}" />
+            </Border>
 
-      <Border Grid.Row="0" Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}">
-        <view:CommandSettingsEditingView Height="400" DataContext="{Binding EditCommandSettingsViewModel}" />
-      </Border>
+            <Border Grid.Row="0" Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}">
+                <view:CommandSettingsEditingView Height="400" DataContext="{Binding EditCommandSettingsViewModel}" />
+            </Border>
 
-      <Grid Grid.Row="1" Margin="0,5,0,0">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="auto"/>
-          <ColumnDefinition Width="*" MinWidth="20"/>
-          <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Margin="0,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" MinWidth="20" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="0"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}">
-          <ToggleButton x:Name="DisclosureToggleButton" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="Display extra information about the command settings">
-            <Grid Width="14" Height="14">
-              <Path Fill="#444" Data="M 0,0 L 12,0 L 6,8 Z" Stretch="Uniform" Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource FalseToVisibleConverter}}"/>
-              <Path Fill="#444" Data="M 0,8 L 12,8 L 6,0 Z" Stretch="Uniform" Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource TrueToVisibleConverter}}"/>
+                <StackPanel
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}">
+                    <ToggleButton
+                        x:Name="DisclosureToggleButton"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        ToolTipService.ToolTip="Display extra information about the command settings">
+                        <Grid Width="14" Height="14">
+                            <Path
+                                Data="M 0,0 L 12,0 L 6,8 Z"
+                                Fill="#444"
+                                Stretch="Uniform"
+                                Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource FalseToVisibleConverter}}" />
+                            <Path
+                                Data="M 0,8 L 12,8 L 6,0 Z"
+                                Fill="#444"
+                                Stretch="Uniform"
+                                Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource TrueToVisibleConverter}}" />
+                        </Grid>
+                    </ToggleButton>
+                    <Button Command="{Binding SaveCommandSettingsCommand}" ToolTipService.ToolTip="Save Settings">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/disk.png" />
+                    </Button>
+                    <Button Command="{Binding SaveCommandSettingsAsCommand}" ToolTipService.ToolTip="Save Settings As...">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/disk_multiple.png" />
+                    </Button>
+                    <Button Command="{Binding LoadCommandSettingsCommand}" ToolTipService.ToolTip="Load Settings">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/folder_page_white.png" />
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button
+                        Command="{Binding DoneCommand}"
+                        ToolTipService.ToolTip="Commit Changes"
+                        Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/tick.png" />
+                    </Button>
+                    
+                    <Button
+                        Command="{Binding EditElementsViewModel.RecalculateCommand}"
+                        ToolTipService.ToolTip="Refresh Conduits"
+                        Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/arrow_refresh.png" />
+                    </Button>
+                    <Button
+                        Command="{Binding CancelCommand}"
+                        ToolTipService.ToolTip="Cancel Changes"
+                        Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/delete.png" />
+                    </Button>
+
+                    <Button
+                        Command="{Binding SetViewModeCommand}"
+                        CommandParameter="ManageSettings"
+                        ToolTipService.ToolTip="Edit Settings"
+                        Visibility="{Binding ViewMode, Converter={StaticResource StringNonEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/cog.png" />
+                    </Button>
+
+                    <Button
+                        Command="{Binding SetViewModeCommand}"
+                        CommandParameter="EditElements"
+                        ToolTipService.ToolTip="Show Calculator"
+                        Visibility="{Binding ViewMode, Converter={StaticResource StringNonEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/calculator.png" />
+                    </Button>
+                </StackPanel>
             </Grid>
-          </ToggleButton>
-          <Button Command="{Binding SaveCommandSettingsCommand}"               
-                            ToolTipService.ToolTip="Save Settings">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/disk.png" Width="16" Height="16"/>
-          </Button>
-          <Button Command="{Binding SaveCommandSettingsAsCommand}"
-                            ToolTipService.ToolTip="Save Settings As...">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/disk_multiple.png" Width="16" Height="16"/>
-          </Button>
-          <Button Command="{Binding LoadCommandSettingsCommand}"               
-                            ToolTipService.ToolTip="Load Settings">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/folder_page_white.png" Width="16" Height="16"/>
-          </Button>
-        </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="2">
-          <Button Command="{Binding DoneCommand}"               
-                            ToolTipService.ToolTip="Commit Changes"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/tick.png" Width="16" Height="16"/>
-          </Button>
-          <Button Command="{Binding EditElementsViewModel.RecalculateCommand}"
-                            ToolTipService.ToolTip="Refresh Conduits"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/arrow_refresh.png" Width="16" Height="16"/>
-          </Button>
-          <Button Command="{Binding CancelCommand}"               
-                            ToolTipService.ToolTip="Cancel Changes"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringEqualityToVisibleConverter}, ConverterParameter='EditElements'}">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/delete.png" Width="16" Height="16"/>
-          </Button>
+            <Grid
+                Grid.Row="2"
+                MaxWidth="400"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Left"
+                Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource TrueToVisibleConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
 
-          <Button Command="{Binding SetViewModeCommand}" CommandParameter="ManageSettings"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringNonEqualityToVisibleConverter}, ConverterParameter='ManageSettings'}"
-                            ToolTipService.ToolTip="Edit Settings">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/cog.png" Width="16" Height="16"/>
-          </Button>
+                <TextBlock
+                    Grid.Row="0"
+                    TextWrapping="Wrap"
+                    Visibility="{Binding CommandSettings.IsFromResource, Converter={StaticResource FalseToVisibleConverter}}">
+                    <Run Text="Loaded from file: " />
+                    <Run Text="{Binding CommandSettings.AssociatedFilename, Mode=OneWay}" />
+                </TextBlock>
+                <TextBlock Grid.Row="0" Visibility="{Binding CommandSettings.IsFromResource, Converter={StaticResource TrueToVisibleConverter}}">
+                    <Run Text="Settings are defaults and not loaded from an external file" />
+                </TextBlock>
 
-          <Button Command="{Binding SetViewModeCommand}" CommandParameter="EditElements"
-                            Visibility="{Binding ViewMode, Converter={StaticResource StringNonEqualityToVisibleConverter}, ConverterParameter='EditElements'}"
-                            ToolTipService.ToolTip="Show Calculator">
-            <Image Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/calculator.png" Width="16" Height="16"/>
-          </Button>
-        </StackPanel>
-      </Grid>
-
-      <Grid Grid.Row="2" Margin="0,5,0,0" Visibility="{Binding IsChecked, ElementName=DisclosureToggleButton, Converter={StaticResource TrueToVisibleConverter}}" MaxWidth="400" HorizontalAlignment="Left">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="auto"/>
-          <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Grid.Row="0" Visibility="{Binding CommandSettings.IsFromResource, Converter={StaticResource FalseToVisibleConverter}}" TextWrapping="Wrap">
-                    <Run Text="Loaded from file: "/>
-                    <Run Text="{Binding CommandSettings.AssociatedFilename, Mode=OneWay}"/>
-        </TextBlock>
-        <TextBlock Grid.Row="0" Visibility="{Binding CommandSettings.IsFromResource, Converter={StaticResource TrueToVisibleConverter}}">
-                    <Run Text="Settings are defaults and not loaded from an external file"/>
-        </TextBlock>
-
-        <TextBlock Grid.Row="1" Margin="0,5,0,0" TextWrapping="Wrap" Visibility="{Binding CommandSettings.FileLoadException, Converter={StaticResource NotNullToVisibleConverter}}">
-                    <Run Text="File Load Exception:"/>
-                    <Run Text="{Binding CommandSettings.FileLoadException.Message, Mode=OneWay}"/>
-        </TextBlock>
-      </Grid>
-    </Grid>
-  </Border>
+                <TextBlock
+                    Grid.Row="1"
+                    Margin="0,5,0,0"
+                    TextWrapping="Wrap"
+                    Visibility="{Binding CommandSettings.FileLoadException, Converter={StaticResource NotNullToVisibleConverter}}">
+                    <Run Text="File Load Exception:" />
+                    <Run Text="{Binding CommandSettings.FileLoadException.Message, Mode=OneWay}" />
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Border>
 </UserControl>
