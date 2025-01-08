@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows;
+using System.Windows.Input;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Selection;
 using Idibri.RevitPlugin.Common.Infrastructure;
 using Idibri.RevitPlugin.ConduitSizeCalculator.Models;
 
@@ -185,8 +189,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         }
         private ConduitViewModel _conduit6;
 
-
-
         public BoxViewModel BoxViewModel
         {
             get
@@ -293,6 +295,31 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         private Action OnCommit { get; set; }
 
         private bool PerformUpdates = false;
+
+        public UIDocument _uiDoc_edit;
+
+        private string _markText;
+
+        // Properties
+        public string MarkText
+        {
+            get { return _markText; }
+            set
+            {
+                value = ReduceString(value);
+                if (_markText != value)
+                {
+                    _markText = value;
+                    NotifyPropertyChanged("MarkText");
+                    Update = true;
+                }
+            }
+        }
+        private bool Update { get; set; }
+
+        public ICommand SetMarkCommand { get; }
+        public Action CloseAction { get; set; }
+
         #endregion
 
         #region Commands
@@ -355,17 +382,65 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         #endregion
 
         #region Constructors
-        public EditElementsViewModel(CommandSettings commandSettings, IConduitCalculator conduitUpdater, Action onCommit)
+        public EditElementsViewModel(CommandSettings commandSettings, IConduitCalculator conduitUpdater, Action onCommit, UIDocument uiDoc)
             : base()
         {
             ConduitUpdater = conduitUpdater;
             CommandSettings = commandSettings;
             OnCommit = onCommit ?? (Action)(() => { });
             PerformUpdates = true;
+            SetMarkCommand = new RelayCommand(SetMark);
+            _uiDoc_edit = uiDoc;
+            LoadInitialMarkValue();
         }
         #endregion
 
         #region Methods
+ 
+        private void LoadInitialMarkValue()
+        {
+            var element = GetSelectedElement();
+            if (element.Count >0)
+                MarkText = element.Count > 1?"<Multiple Selection>":element.First().LookupParameter("Mark").AsString();
+
+        }
+        private List<Element> GetSelectedElement()
+        {
+            var selectedIds = _uiDoc_edit.Selection.GetElementIds();
+            //return selectedIds.Count == 1 ? _uiDoc_edit.Document.GetElement(selectedIds.First()) :null;
+            return selectedIds.Select(x => _uiDoc_edit.Document.GetElement(x)).ToList();
+        }
+        private void SetMark(Object a)
+        {
+            var element = GetSelectedElement();
+            foreach (var ele in element)
+            {
+                if (ele != null && ele.LookupParameter("Mark") != null)
+                {
+                    using (var transaction = new Transaction(_uiDoc_edit.Document, "Set Mark Parameter"))
+                    {
+                        ele.LookupParameter("Mark").Set(MarkText);
+                    }
+                    CloseAction?.Invoke(); // Close the view after setting the parameter
+                }
+                else
+                {
+                    MessageBox.Show("Invalid selection or 'Mark' parameter missing.");
+                }
+            }
+            
+        }
+        private new string ReduceString(string value)
+        {
+            return value?.Trim();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         private void UpdateConduitModels()
         {
             foreach (ConduitViewModel conduit in ConduitModels)
@@ -535,6 +610,22 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
     public class ConduitViewModel : ViewModelBase
     {
         #region Properties
+        public string Mark
+        {
+            get { return _mark; }
+            set
+            {
+                value = ReduceString(value);
+                if (_mark != value)
+                {
+                    _mark = value;
+                    NotifyPropertyChanged("Mark");
+                    Update = true;
+                }
+            }
+        }
+        private string _mark;
+
         public string Fill
         {
             get { return _fill; }
@@ -744,6 +835,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             ConduitType = null;
             Size = null;
             Update = false;
+            Mark = null;
         }
 
         public void SetFromElements(IEnumerable<Element> elements, ConduitSchedule conduitSchedule)
@@ -760,6 +852,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 string size = ConduitParameters.Size.GetString(element);
                 string destination = ConduitParameters.Destination.GetString(element);
                 string cableDestination = ConduitParameters.CableDestination.GetString(element);
+                string mark = ConduitParameters.Mark.GetString(element);
 
                 if (i++ == 0)
                 {
@@ -768,6 +861,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     Size = size;
                     Destination = destination;
                     CableDestination = cableDestination;
+                    Mark = mark;
                 }
                 else
                 {
@@ -775,6 +869,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     if (conduitType != ConduitType) { ConduitType = null; }
                     if (size != Size) { Size = null; }
                     if (destination != Destination) { Destination = null; }
+                    if (mark != Mark) { Mark = null; }
+
                 }
             }
 
@@ -783,7 +879,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 ConduitType = null;
             }
 
-            Update = Fill != null && Destination != null;
+            Update = Fill != null && Destination != null && Mark != null;
         }
 
         public void UpdateSize(CommandSettings commandSettings, IConduitCalculator conduitUpdater, CalculateConduitParameter parameter)
@@ -806,6 +902,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 ConduitParameters.ConduitType.SetString(element, ConduitType);
                 ConduitParameters.Destination.SetString(element, Destination);
                 ConduitParameters.CableDestination.SetString(element, CableDestination);
+                ConduitParameters.Mark.SetString(element, Mark);
 
             }
         }
@@ -1164,6 +1261,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
             }
         }
+        #endregion
+
+        #region newmodel
+
         #endregion
     }
 }

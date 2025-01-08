@@ -3,11 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\views\\editing\\elementeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-=======
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\editing\\elementeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+
       "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\elementeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -17,33 +15,24 @@
     {
       "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\editing\\conduitscheduleeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\conduitscheduleeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\editing\\conduiteditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\conduiteditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\views\\editing\\elementeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\elementeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\editing\\conduiteditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\conduiteditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\views\\editing\\editmasterview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\editmasterview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ConduitSizeCalculator||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\viewmodels\\editing\\editelementsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\editing\\editelementsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|1e78f8db-6c07-4d61-a18f-7514010abd56"
-=======
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\editing\\cablescheduleeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\editing\\cablescheduleeditingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\viewmodels\\editing\\editmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\editing\\editmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,16 +42,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 7,
-=======
-          "SelectedChildIndex": 1,
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
+
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Command.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Command.cs",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Command.cs",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Command.cs",
+              "RelativeToolTip": "ConduitSizeCalculator\\Command.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAuwLUAAAAAAAAAAAAAAA==",
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-<<<<<<< HEAD
               "Title": "EditMasterView.xaml",
               "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
               "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
@@ -70,55 +65,65 @@
               "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-01-02T04:50:44.838Z",
-=======
-              "Title": "ReportingMasterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "RelativeToolTip": "ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAkwBsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T06:50:24.394Z",
+              "WhenOpened": "2025-01-07T08:07:08.483Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ElementEditingView.xaml",
               "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ElementEditingView.xaml",
               "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\ElementEditingView.xaml",
               "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ElementEditingView.xaml",
               "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\ElementEditingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-05T06:43:46.201Z",
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
+              "WhenOpened": "2025-01-07T12:05:44.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-<<<<<<< HEAD
-=======
-              "Title": "ConduitScheduleEditingView.xaml",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ConduitScheduleEditingView.xaml",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\ConduitScheduleEditingView.xaml",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ConduitScheduleEditingView.xaml",
-              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\ConduitScheduleEditingView.xaml",
+              "Title": "EditMasterView.xaml",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
+              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\EditMasterView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-05T06:43:43.666Z",
+              "WhenOpened": "2025-01-07T11:55:18.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
+              "Title": "EditElementsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Editing\\EditElementsViewModel.cs",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Editing\\EditElementsViewModel.cs",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Editing\\EditElementsViewModel.cs",
+              "RelativeToolTip": "ConduitSizeCalculator\\ViewModels\\Editing\\EditElementsViewModel.cs",
+              "ViewState": "AgIAAHwBAAAAAAAAAAAcwJMBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T09:39:09.056Z",
+
               "Title": "ConduitEditingView.xaml",
               "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ConduitEditingView.xaml",
               "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\ConduitEditingView.xaml",
               "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\ConduitEditingView.xaml",
               "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\ConduitEditingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-<<<<<<< HEAD
               "WhenOpened": "2025-01-02T04:50:35.68Z",
               "EditorCaption": ""
             },
@@ -132,57 +137,20 @@
               "RelativeToolTip": "ConduitSizeCalculator\\ConduitSizeCalculator.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-02T04:49:53.747Z",
-=======
-              "WhenOpened": "2024-12-05T06:43:41.818Z",
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-<<<<<<< HEAD
-              "Title": "ReportingMasterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "RelativeToolTip": "ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAIAwwDYAAAAMAAAAAAAAAA==",
+              "Title": "EditMasterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Editing\\EditMasterViewModel.cs",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Editing\\EditMasterViewModel.cs",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Editing\\EditMasterViewModel.cs",
+              "RelativeToolTip": "ConduitSizeCalculator\\ViewModels\\Editing\\EditMasterViewModel.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowJoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T04:41:30.655Z",
-=======
-              "Title": "CommandSettingsEditingView.xaml",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\CommandSettingsEditingView.xaml",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\CommandSettingsEditingView.xaml",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\CommandSettingsEditingView.xaml",
-              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\CommandSettingsEditingView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-05T06:43:38.585Z",
+              "WhenOpened": "2025-01-07T05:15:24.622Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CableScheduleEditingView.xaml",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\CableScheduleEditingView.xaml",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Editing\\CableScheduleEditingView.xaml",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Editing\\CableScheduleEditingView.xaml",
-              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Editing\\CableScheduleEditingView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-05T06:43:32.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Command.cs",
-              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Command.cs",
-              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Command.cs",
-              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Command.cs",
-              "RelativeToolTip": "ConduitSizeCalculator\\Command.cs",
-              "ViewState": "AgIAAFACAAAAAH5vN+XAv2sCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T06:42:14.857Z",
->>>>>>> parent of 97f3e35 (161224 EOD Commit - ModelNavigatorViewModel Line23 WIP)
               "EditorCaption": ""
             },
             {

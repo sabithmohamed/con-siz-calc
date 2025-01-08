@@ -114,7 +114,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
             DocumentHelper documentHelper = new DocumentHelper(uiDoc);
             CommandSettings commandSettings = documentHelper.LoadSettings();
             ConduitCalculator calculator = new ConduitCalculator(documentHelper);
-
+            
             List<Element> useElements = new List<Element>();
             string firstWorkset = null;
             bool isHeterogenousWorksetSelection = false;
@@ -173,10 +173,11 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                             return null;
                         }
                     };
-
-                    ViewModels.EditMasterViewModel masterViewModel = new ViewModels.EditMasterViewModel(commandSettings, calculator, viewModelIoc)
+  
+                    ViewModels.EditMasterViewModel masterViewModel = new ViewModels.EditMasterViewModel(commandSettings, calculator, viewModelIoc, uiDoc)
                     {
                         Elements = useElements,
+                        _uiDoc_master = uiDoc,
                     };
 
                     window = new Window()
@@ -518,6 +519,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
 
     public class ConduitParameters
     {
+        public RevitProperty Mark { get; set; }
         public RevitProperty Size { get; private set; }
         public RevitProperty Fill { get; private set; }
         public RevitProperty ConduitType { get; private set; }
@@ -525,7 +527,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
         public RevitProperty CableDestination { get; private set; }
         public bool AutoCalculate { get; private set; }
 
-        public ConduitParameters(RevitProperty size, RevitProperty fill, RevitProperty conduitType, RevitProperty destination, RevitProperty cableDestination, bool autoCalculate)
+        public ConduitParameters(RevitProperty size, RevitProperty fill, RevitProperty conduitType, RevitProperty destination, RevitProperty cableDestination, bool autoCalculate, RevitProperty mark = null)
         {
             Size = size;
             Fill = fill;
@@ -533,11 +535,14 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
             Destination = destination;
             CableDestination = cableDestination;
             AutoCalculate = autoCalculate;
+            Mark = mark;
         }
     }
 
     public class JunctionBoxConduits
     {
+        static readonly RevitProperty Mark = new RevitProperty("Mark", new Guid("81DB8C34-F0F1-41FE-B736-E091D5D8DD2C"));
+
         static readonly RevitProperty Size1 = new RevitProperty("Size1", new Guid("6c3bc498-1ef6-4cfd-9c18-0722fab4c93e"));
         static readonly RevitProperty Size2 = new RevitProperty("Size2", new Guid("f518bcd9-d84b-426a-84bc-34e134528681"));
         static readonly RevitProperty Size3 = new RevitProperty("Size3", new Guid("9d7ab982-063c-4137-b7ef-73536ea75c84"));
@@ -573,12 +578,12 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
         static readonly RevitProperty CableDestination5 = new RevitProperty("Cable Destination 5", new Guid("87adeae0-1cdc-455b-9d47-b6b2d6a4edae"));
         static readonly RevitProperty CableDestination6 = new RevitProperty("Cable Destination 6", new Guid("2648cdfd-82ee-47d1-b64a-4c2f170329e3"));
 
-        public static readonly ConduitParameters Conduit1 = new ConduitParameters(Size1, Fill1, ConduitType1, Destination1, CableDestination1, true);
-        public static readonly ConduitParameters Conduit2 = new ConduitParameters(Size2, Fill2, ConduitType2, Destination2, CableDestination2, true);
-        public static readonly ConduitParameters Conduit3 = new ConduitParameters(Size3, Fill3, ConduitType3, Destination3, CableDestination3, true);
-        public static readonly ConduitParameters Conduit4 = new ConduitParameters(Size4, Fill4, ConduitType4, Destination4, CableDestination4, true);
-        public static readonly ConduitParameters Conduit5 = new ConduitParameters(Size5, Fill5, ConduitType5, Destination5, CableDestination5, true);
-        public static readonly ConduitParameters Conduit6 = new ConduitParameters(Size6, Fill6, ConduitType6, Destination6, CableDestination6, true);
+        public static readonly ConduitParameters Conduit1 = new ConduitParameters(Size1, Fill1, ConduitType1, Destination1, CableDestination1, true, Mark);
+        public static readonly ConduitParameters Conduit2 = new ConduitParameters(Size2, Fill2, ConduitType2, Destination2, CableDestination2, true, Mark);
+        public static readonly ConduitParameters Conduit3 = new ConduitParameters(Size3, Fill3, ConduitType3, Destination3, CableDestination3, true, Mark);
+        public static readonly ConduitParameters Conduit4 = new ConduitParameters(Size4, Fill4, ConduitType4, Destination4, CableDestination4, true, Mark);
+        public static readonly ConduitParameters Conduit5 = new ConduitParameters(Size5, Fill5, ConduitType5, Destination5, CableDestination5, true, Mark);
+        public static readonly ConduitParameters Conduit6 = new ConduitParameters(Size6, Fill6, ConduitType6, Destination6, CableDestination6, true, Mark);
 
         public static IEnumerable<ConduitParameters> ConduitParameters
         {
@@ -616,4 +621,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
         public static readonly RevitProperty Height = new RevitProperty("Height", new Guid("3946b890-b3f7-46f8-9ad3-b89ee87f5fc4"), true, true);
         public static readonly RevitProperty Width = new RevitProperty("Width", new Guid("595c71ca-3064-44c1-a226-3fd479cd6593"), true, true);
     }
+
+
 }
