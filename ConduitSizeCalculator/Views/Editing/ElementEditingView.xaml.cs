@@ -1,6 +1,4 @@
-﻿using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace Idibri.RevitPlugin.ConduitSizeCalculator.Views
 {
@@ -9,6 +7,11 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.Views
         public ElementEditingView()
         {
             InitializeComponent();
+        }
+
+        private void ConduitEditingView_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+
         }
     }
 }
