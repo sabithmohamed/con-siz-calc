@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
 
             <!--  Specific Styles  -->
@@ -162,45 +163,50 @@
                     Grid.Column="11"
                     Style="{StaticResource ColumnHeaderStyle}"
                     Text="% Full" />
-
+                
                 <view:ConduitEditingView
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit1}"
                     RowHeader="1" 
-                    Visibility="{Binding Available}"/>
+                    IsEnabled="{Binding DataContext.Available_Fill1, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <view:ConduitEditingView
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit2}"
                     Loaded="ConduitEditingView_Loaded"
-                    RowHeader="2" />
+                    RowHeader="2" 
+                    IsEnabled="{Binding DataContext.Available_Fill2, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <view:ConduitEditingView
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit3}"
-                    RowHeader="3" />
+                    RowHeader="3" 
+                    IsEnabled="{Binding DataContext.Available_Fill3, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <view:ConduitEditingView
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit4}"
-                    RowHeader="4" />
+                    RowHeader="4" 
+                    IsEnabled="{Binding DataContext.Available_Fill4, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <view:ConduitEditingView
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit5}"
-                    RowHeader="5" />
+                    RowHeader="5" 
+                    IsEnabled="{Binding DataContext.Available_Fill5, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                 <view:ConduitEditingView
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="12"
                     DataContext="{Binding Conduit6}"
-                    RowHeader="6" />
+                    RowHeader="6" 
+                    IsEnabled="{Binding DataContext.Available_Fill6, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </Grid>
 
             <view:BoxEditingView

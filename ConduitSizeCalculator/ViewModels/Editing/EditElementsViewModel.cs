@@ -320,6 +320,105 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public ICommand SetMarkCommand { get; }
         public Action CloseAction { get; set; }
 
+
+        #region This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
+        private bool available_Fill1;
+
+        public bool Available_Fill1
+        {
+            get { return available_Fill1; }
+            set
+            {
+                if (available_Fill1 != value)
+                {
+                    available_Fill1 = value;
+                    OnPropertyChanged(nameof(Available_Fill1)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        private bool available_Fill2;
+
+        public bool Available_Fill2
+        {
+            get { return available_Fill2; }
+            set
+            {
+                if (available_Fill2 != value)
+                {
+                    available_Fill2 = value;
+                    OnPropertyChanged(nameof(Available_Fill2)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        private bool available_Fill3;
+
+        public bool Available_Fill3
+        {
+            get { return available_Fill3; }
+            set
+            {
+                if (available_Fill3 != value)
+                {
+                    available_Fill3 = value;
+                    OnPropertyChanged(nameof(Available_Fill3)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        private bool available_Fill4;
+
+        public bool Available_Fill4
+        {
+            get { return available_Fill4; }
+            set
+            {
+                if (available_Fill4 != value)
+                {
+                    available_Fill4 = value;
+                    OnPropertyChanged(nameof(Available_Fill4)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        private bool available_Fill5;
+
+        public bool Available_Fill5
+        {
+            get { return available_Fill5; }
+            set
+            {
+                if (available_Fill5 != value)
+                {
+                    available_Fill5 = value;
+                    OnPropertyChanged(nameof(Available_Fill5)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        private bool available_Fill6;
+
+        public bool Available_Fill6
+        {
+            get { return available_Fill6; }
+            set
+            {
+                if (available_Fill6 != value)
+                {
+                    available_Fill6 = value;
+                    OnPropertyChanged(nameof(Available_Fill6)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
+        #endregion This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
         #endregion
 
         #region Commands
@@ -403,12 +502,48 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (element.Count >0)
                 MarkText = element.Count > 1?"<Multiple Selection>":element.First().LookupParameter("Mark").AsString();
 
+            #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
+            if (GetParam(element.First(), "Fill1") == null)
+                Available_Fill1 = false;
+            else { Available_Fill1 = true; }
+
+            if (GetParam(element.First(), "Fill2") == null)
+                Available_Fill2 = false;
+            else { Available_Fill2 = true; }
+
+            if (GetParam(element.First(), "Fill3") == null)
+                Available_Fill3 = false;
+            else { Available_Fill3 = true; }
+
+            if (GetParam(element.First(), "Fill4") == null)
+                Available_Fill4 = false;
+            else { Available_Fill4 = true; }
+
+            if (GetParam(element.First(), "Fill5") == null)
+                Available_Fill5 = false;
+            else { Available_Fill5 = true; }
+
+            if (GetParam(element.First(), "Fill6") == null)
+                Available_Fill6 = false;
+            else { Available_Fill6 = true; }
+            #endregion
         }
         private List<Element> GetSelectedElement()
         {
             var selectedIds = _uiDoc_edit.Selection.GetElementIds();
             //return selectedIds.Count == 1 ? _uiDoc_edit.Document.GetElement(selectedIds.First()) :null;
             return selectedIds.Select(x => _uiDoc_edit.Document.GetElement(x)).ToList();
+        }
+
+        public Parameter GetParam(Element element, String param_name)
+        {
+            Parameter mark = element.LookupParameter(param_name);
+            if (mark == null)
+            {
+                Element typ = _uiDoc_edit.Document.GetElement(element.GetTypeId());
+                mark = typ.LookupParameter(param_name);
+            }
+            return mark == null ? null : mark;
         }
         private void SetMark(Object a)
         {
@@ -572,6 +707,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             {
                 case "Update":
                     UpdateCommands(CommitCommand);
+                    SetMark(null);
+
                     break;
                 case "Fill":
                 case "ConduitType":
@@ -814,6 +951,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
         public string DefaultConduitType { get; private set; }
 
+        public System.Windows.Visibility ElementVisibility { get; private set; }
         public ConduitParameters ConduitParameters { get; private set; }
         #endregion
 
@@ -825,6 +963,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             ConduitSchedule = conduitSchedule;
             MaxCableAreaPercent = maxCableAreaPercent;
             DefaultConduitType = defaultConduitType;
+            ElementVisibility = System.Windows.Visibility.Visible;
         }
         #endregion
 
@@ -870,6 +1009,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     if (size != Size) { Size = null; }
                     if (destination != Destination) { Destination = null; }
                     if (mark != Mark) { Mark = null; }
+                    if (cableDestination!= CableDestination) { CableDestination = null; }
 
                 }
             }
