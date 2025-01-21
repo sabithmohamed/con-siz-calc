@@ -1,83 +1,94 @@
-﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.ExcessiveConduitAreaReportingView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
+﻿<UserControl
+    x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.ExcessiveConduitAreaReportingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
-      <conv:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter"/>
-      <conv:BooleanToVisibilityConverter x:Key="FalseToVisibleConverter" Reversed="True"/>
-      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleEqualToVisibleConverter" ComparisonType="Equal"/>
-      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleNotEqualToVisibleConverter" ComparisonType="NotEqual"/>
-      <conv:DoubleToImperialLengthConverter x:Key="DoubleToImperialLengthConverter" />
-      <conv:NullnessToVisibilityConverter x:Key="NullToVisibleConverter" Reversed="True" />
-      <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
-    </ResourceDictionary>
-  </UserControl.Resources>
-  <Grid Background="Transparent">
-    <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}"/>
-    <Grid Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
-      <TextBlock Text="No boxes with excessive conduit area found" Visibility="{Binding NodeGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}"/>
-      <TreeView ItemsSource="{Binding NodeGroups}" Visibility="{Binding NodeGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
-        <TreeView.ItemContainerStyle>
-          <Style TargetType="TreeViewItem">
-            <Setter Property="IsExpanded" Value="{Binding IsExpanded}"/>
-          </Style>
-        </TreeView.ItemContainerStyle>
-        <TreeView.ItemTemplate>
-          <HierarchicalDataTemplate ItemsSource="{Binding Nodes}">
-            <HierarchicalDataTemplate.ItemTemplate>
-              <HierarchicalDataTemplate ItemsSource="{Binding Edges}">
-                <HierarchicalDataTemplate.ItemTemplate>
-                  <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                      <StackPanel.ContextMenu>
-                        <ContextMenu>
-                          <MenuItem Command="{Binding SelectSourceCommand}" CommandParameter="{Binding Source}" Header="Show Source"/>
-                          <MenuItem Command="{Binding SelectDestinationCommand}" CommandParameter="{Binding Destination}" Header="Show Destination"/>
-                        </ContextMenu>
-                      </StackPanel.ContextMenu>
-                      <TextBlock Text="{Binding Conduit.Name, Mode=OneWay}" MinWidth="75"/>
-                      <TextBlock Text="{Binding Source.JunctionBox.Mark, Mode=OneWay}"/>
-                      <TextBlock Text="->" Margin="5,0,5,0"/>
-                      <TextBlock Text="{Binding Destination.JunctionBox.Mark, TargetNullValue='NONE', FallbackValue='NONE', Mode=OneWay}"/>
-                      <TextBlock Text=" (Duplicate Mark)" Visibility="{Binding Destination.MarkIsDuplicate, Converter={StaticResource TrueToVisibleConverter}, FallbackValue=Collapsed}"/>
-                    </StackPanel>
-                  </DataTemplate>
-                </HierarchicalDataTemplate.ItemTemplate>
-                <StackPanel Orientation="Horizontal" Background="Transparent">
-                  <StackPanel.ContextMenu>
-                    <ContextMenu>
-                      <MenuItem Command="{Binding SelectElementCommand}" CommandParameter="{Binding}" Header="Show Element"/>
-                    </ContextMenu>
-                  </StackPanel.ContextMenu>
-                  <StackPanel Orientation="Horizontal" MinWidth="100">
-                    <TextBlock Text="{Binding JunctionBox.Mark, Mode=OneWay}"/>
-                    <TextBlock Text=" (Duplicate Mark)" Visibility="{Binding MarkIsDuplicate, Converter={StaticResource TrueToVisibleConverter}}"/>
-                  </StackPanel>
-                  <TextBlock>
-                                        <Run Text="{Binding RequiredConduitAreaIn, Converter={StaticResource DoubleToImperialLengthConverter}, Mode=OneWay}"/>
-                                        <Run Text="&#x00b2;"/>
-                  </TextBlock>
-                  <TextBlock Text="/" Margin="5,0,5,0"/>
-                  <TextBlock>
-                                        <Run Text="{Binding AvailableConduitAreaIn, Converter={StaticResource DoubleToImperialLengthConverter}, Mode=OneWay}"/>
-                                        <Run Text="&#x00b2;"/>
-                  </TextBlock>
-                </StackPanel>
-              </HierarchicalDataTemplate>
-            </HierarchicalDataTemplate.ItemTemplate>
-            <TextBlock Text="{Binding Name, Mode=OneWay}"/>
-          </HierarchicalDataTemplate>
-        </TreeView.ItemTemplate>
-      </TreeView>
+            <conv:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter" />
+            <conv:BooleanToVisibilityConverter x:Key="FalseToVisibleConverter" Reversed="True" />
+            <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleEqualToVisibleConverter" ComparisonType="Equal" />
+            <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleNotEqualToVisibleConverter" ComparisonType="NotEqual" />
+            <conv:DoubleToImperialLengthConverter x:Key="DoubleToImperialLengthConverter" />
+            <conv:NullnessToVisibilityConverter x:Key="NullToVisibleConverter" Reversed="True" />
+            <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="Transparent">
+        <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}" />
+        <Grid Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
+            <TextBlock Text="No boxes with excessive conduit area found" Visibility="{Binding NodeGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
+            <TreeView ItemsSource="{Binding NodeGroups}" Visibility="{Binding NodeGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded}" />
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Nodes}">
+                        <HierarchicalDataTemplate.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Edges}">
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <StackPanel.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem
+                                                        Command="{Binding SelectSourceCommand}"
+                                                        CommandParameter="{Binding Source}"
+                                                        Header="Show Source" />
+                                                    <MenuItem
+                                                        Command="{Binding SelectDestinationCommand}"
+                                                        CommandParameter="{Binding Destination}"
+                                                        Header="Show Destination" />
+                                                </ContextMenu>
+                                            </StackPanel.ContextMenu>
+                                            <TextBlock MinWidth="75" Text="{Binding Conduit.Name, Mode=OneWay}" />
+                                            <TextBlock Text="{Binding Source.JunctionBox.Mark, Mode=OneWay}" />
+                                            <TextBlock Margin="5,0,5,0" Text="-&gt;" />
+                                            <TextBlock Text="{Binding Destination.JunctionBox.Mark, TargetNullValue='NONE', FallbackValue='NONE', Mode=OneWay}" />
+                                            <TextBlock Text=" (Duplicate Mark)" Visibility="{Binding Destination.MarkIsDuplicate, Converter={StaticResource TrueToVisibleConverter}, FallbackValue=Collapsed}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    <StackPanel.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem
+                                                Command="{Binding SelectElementCommand}"
+                                                CommandParameter="{Binding}"
+                                                Header="Show Element" />
+                                        </ContextMenu>
+                                    </StackPanel.ContextMenu>
+                                    <StackPanel MinWidth="100" Orientation="Horizontal">
+                                        <TextBlock Text="{Binding JunctionBox.Mark, Mode=OneWay}" />
+                                        <TextBlock Text=" (Duplicate Mark)" Visibility="{Binding MarkIsDuplicate, Converter={StaticResource TrueToVisibleConverter}}" />
+                                    </StackPanel>
+                                    <TextBlock>
+                                        <Run Text="{Binding RequiredConduitAreaIn, Converter={StaticResource DoubleToImperialLengthConverter}, Mode=OneWay}" />
+                                        <Run Text="&#x00b2;" />
+                                    </TextBlock>
+                                    <TextBlock Margin="5,0,5,0" Text="/" />
+                                    <TextBlock>
+                                        <Run Text="{Binding AvailableConduitAreaIn, Converter={StaticResource DoubleToImperialLengthConverter}, Mode=OneWay}" />
+                                        <Run Text="&#x00b2;" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+                        </HierarchicalDataTemplate.ItemTemplate>
+                        <TextBlock Text="{Binding Name, Mode=OneWay}" />
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
     </Grid>
-  </Grid>
 </UserControl>

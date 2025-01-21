@@ -43,7 +43,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit1,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit1;
             }
@@ -69,7 +70,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit2,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit2;
             }
@@ -95,7 +97,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit3,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit3;
             }
@@ -121,7 +124,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit4,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit4;
             }
@@ -147,7 +151,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit5,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit5;
             }
@@ -173,7 +178,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         JunctionBoxConduits.Conduit6,
                         CommandSettings.ConduitSchedule,
                         MaxCableAreaPercent,
-                        CommandSettings.DefaultConduitType);
+                        CommandSettings.DefaultConduitType,
+                        _uiDoc_edit);
                 }
                 return _conduit6;
             }
@@ -311,7 +317,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _markText = value;
                     NotifyPropertyChanged("MarkText");
-                    //SetMark(null);
+                    NotifyPropertyChanged("Update");
                     Update = true;
                 }
             }
@@ -485,19 +491,19 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public EditElementsViewModel(CommandSettings commandSettings, IConduitCalculator conduitUpdater, Action onCommit, UIDocument uiDoc)
             : base()
         {
+            _uiDoc_edit = uiDoc;
             ConduitUpdater = conduitUpdater;
             CommandSettings = commandSettings;
             OnCommit = onCommit ?? (Action)(() => { });
             PerformUpdates = true;
             SetMarkCommand = new RelayCommand(SetMark);
-            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
-            _uiDoc_edit = uiDoc;
+            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);            
             LoadInitialMarkValue();
         }
         #endregion
 
         #region Methods
- 
+        
         private void LoadInitialMarkValue()
         {
             var element = GetSelectedElement();
@@ -530,6 +536,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             else { Available_Fill6 = true; }
             #endregion
         }
+
         private List<Element> GetSelectedElement()
         {
             var selectedIds = _uiDoc_edit.Selection.GetElementIds();
@@ -548,7 +555,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             }
             return mark == null ? null : mark;
         }
-        private void SetMark(Object a)
+        public void SetMark(Object a)
         {
             var element = GetSelectedElement();
             foreach (var ele in element)
@@ -721,10 +728,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         {
             switch (e.PropertyName)
             {
+
                 case "Update":
                     UpdateCommands(CommitCommand);
-                    SetMark(null);
-
                     break;
                 case "Fill":
                 case "ConduitType":
@@ -854,8 +860,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         }
         private string _cabledestination;
 
-
-
         public bool Update
         {
             get { return _update; }
@@ -970,16 +974,19 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public System.Windows.Visibility ElementVisibility { get; private set; }
         public ConduitParameters ConduitParameters { get; private set; }
         #endregion
+        public UIDocument uidoc_conduit;
 
         #region Constructors
-        public ConduitViewModel(ConduitParameters conduitPropertyPair, ConduitSchedule conduitSchedule, double maxCableAreaPercent, string defaultConduitType)
+        public ConduitViewModel(ConduitParameters conduitPropertyPair, ConduitSchedule conduitSchedule, double maxCableAreaPercent, string defaultConduitType, UIDocument uidoc)
             : base()
         {
+            //uidoc_conduit = uidoc;
             ConduitParameters = conduitPropertyPair;
             ConduitSchedule = conduitSchedule;
             MaxCableAreaPercent = maxCableAreaPercent;
             DefaultConduitType = defaultConduitType;
             ElementVisibility = System.Windows.Visibility.Visible;
+            uidoc_conduit = uidoc;
         }
         #endregion
 
@@ -1002,12 +1009,13 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
             foreach (Element element in elements)
             {
-                string fill = ConduitParameters.Fill.GetString(element);
-                string conduitType = ConduitParameters.ConduitType.GetString(element);
-                string size = ConduitParameters.Size.GetString(element);
-                string destination = ConduitParameters.Destination.GetString(element);
-                string cableDestination = ConduitParameters.CableDestination.GetString(element);
-                string mark = ConduitParameters.Mark.GetString(element);
+                var udoc = uidoc_conduit;
+                string fill = ConduitParameters.Fill.GetString(element) == null? ConduitParameters.Fill.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())): ConduitParameters.Fill.GetString(element);
+                string conduitType = ConduitParameters.ConduitType.GetString(element) == null? ConduitParameters.ConduitType.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())): ConduitParameters.ConduitType.GetString(element);
+                string size = ConduitParameters.Size.GetString(element) == null? ConduitParameters.Size.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())): ConduitParameters.Size.GetString(element);
+                string destination = ConduitParameters.Destination.GetString(element) == null ? ConduitParameters.Destination.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())) : ConduitParameters.Destination.GetString(element);
+                string cableDestination = ConduitParameters.CableDestination.GetString(element) == null? ConduitParameters.CableDestination.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())): ConduitParameters.CableDestination.GetString(element);
+                string mark = ConduitParameters.Mark.GetString(element) == null ? ConduitParameters.Mark.GetString(uidoc_conduit.Document.GetElement(element.GetTypeId())) : ConduitParameters.Mark.GetString(element); 
 
                 if (i++ == 0)
                 {
@@ -1053,12 +1061,25 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (!Update) { return; }
             foreach (Element element in elements)
             {
-                ConduitParameters.Fill.SetString(element, Fill);
-                ConduitParameters.Size.SetString(element, Size);
-                ConduitParameters.ConduitType.SetString(element, ConduitType);
-                ConduitParameters.Destination.SetString(element, Destination);
-                ConduitParameters.CableDestination.SetString(element, CableDestination);
-                ConduitParameters.Mark.SetString(element, Mark);
+                try
+                {
+                    ConduitParameters.Fill.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), Fill);
+                    ConduitParameters.Size.SetString(element, Size);
+                    ConduitParameters.ConduitType.SetString(element, ConduitType);
+                    ConduitParameters.Destination.SetString(element, Destination);
+                    ConduitParameters.CableDestination.SetString(element, CableDestination);
+                    ConduitParameters.Mark.SetString(element, Mark);
+                }
+                catch 
+                {
+                    ConduitParameters.Fill.SetString(element, Fill);
+                    ConduitParameters.Size.SetString(element, Size);
+                    ConduitParameters.ConduitType.SetString(element, ConduitType);
+                    ConduitParameters.Destination.SetString(element, Destination);
+                    ConduitParameters.CableDestination.SetString(element, CableDestination);
+                    ConduitParameters.Mark.SetString(element, Mark);
+                }
+                
 
             }
         }

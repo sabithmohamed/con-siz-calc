@@ -357,6 +357,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 EditElementsViewModel.CommitCommand.Execute(null);
                 EditElementsViewModel.SetMarkCommand.Execute(null);
                 ViewModelIoc.OnDone();
+                EditElementsViewModel.SetMark(null);
 
             }
         }
@@ -373,6 +374,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 return _doneCommand;
             }
         }
+
         #endregion
 
         #region Cancel

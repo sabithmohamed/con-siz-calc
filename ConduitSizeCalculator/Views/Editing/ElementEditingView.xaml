@@ -95,7 +95,9 @@
                     <Button
                         Command="{Binding SetMarkCommand}"
                         ToolTipService.ToolTip="Commit Changes"
-                        Visibility="{Binding ViewMode, ConverterParameter='EditElements'}">
+                        Visibility="{Binding ViewMode, ConverterParameter='EditElements'}"
+                        IsEnabled="{Binding Update, Mode=TwoWay}">
+                        
                         <Image
                             Width="16"
                             Height="16"
