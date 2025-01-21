@@ -304,6 +304,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
         public UIDocument _uiDoc_edit;
 
+        public bool MarkUpdate;
+
         private string _markText;
 
         // Properties
@@ -316,13 +318,25 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (_markText != value)
                 {
                     _markText = value;
-                    NotifyPropertyChanged("MarkText");
-                    NotifyPropertyChanged("Update");
-                    Update = true;
+                    OnPropertyChanged(nameof(MarkText));
+                    NotifyPropertyChanged(nameof(MarkText));
+
                 }
             }
         }
-        private bool Update { get; set; }
+        private bool update = true;
+        public bool Update
+        {
+            get => update;
+            set
+            {
+                if (update != value)
+                {
+                    update = value;
+                    OnPropertyChanged(nameof(Update));
+                }
+            }
+        }
 
         public ICommand SetMarkCommand { get; }
         public Action CloseAction { get; set; }
@@ -460,7 +474,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         #region Commit
         private bool CommitCanExecute(object param)
         {
-            return WorksetCableSchedulePair != null && CurrentCableSchedule != null && (ConduitModels.Any(cf => cf.Update) || BoxViewModel.UpdateAny);
+            return WorksetCableSchedulePair != null && CurrentCableSchedule != null && (ConduitModels.Any(cf => cf.Update) || BoxViewModel.UpdateAny || MarkUpdate);
         }
 
         private void CommitExecuted(object param)
@@ -507,33 +521,36 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         private void LoadInitialMarkValue()
         {
             var element = GetSelectedElement();
-            if (element.Count >0)
-                MarkText = element.Count > 1?"<Multiple Selection>":element.First().LookupParameter("Mark").AsString();
+            if (element.Count > 0)
+            {
+                MarkText = element.Count > 1 ? "<Multiple Selection>" : element.First().LookupParameter("Mark").AsString();
 
-            #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
-            if (GetParam(element.First(), "Fill1") == null)
-                Available_Fill1 = false;
-            else { Available_Fill1 = true; }
+                #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
+                if (GetParam(element.FirstOrDefault(), "Fill1") == null)
+                    Available_Fill1 = false;
+                else { Available_Fill1 = true; }
 
-            if (GetParam(element.First(), "Fill2") == null)
-                Available_Fill2 = false;
-            else { Available_Fill2 = true; }
+                if (GetParam(element.FirstOrDefault(), "Fill2") == null)
+                    Available_Fill2 = false;
+                else { Available_Fill2 = true; }
 
-            if (GetParam(element.First(), "Fill3") == null)
-                Available_Fill3 = false;
-            else { Available_Fill3 = true; }
+                if (GetParam(element.FirstOrDefault(), "Fill3") == null)
+                    Available_Fill3 = false;
+                else { Available_Fill3 = true; }
 
-            if (GetParam(element.First(), "Fill4") == null)
-                Available_Fill4 = false;
-            else { Available_Fill4 = true; }
+                if (GetParam(element.FirstOrDefault(), "Fill4") == null)
+                    Available_Fill4 = false;
+                else { Available_Fill4 = true; }
 
-            if (GetParam(element.First(), "Fill5") == null)
-                Available_Fill5 = false;
-            else { Available_Fill5 = true; }
+                if (GetParam(element.FirstOrDefault(), "Fill5") == null)
+                    Available_Fill5 = false;
+                else { Available_Fill5 = true; }
 
-            if (GetParam(element.First(), "Fill6") == null)
-                Available_Fill6 = false;
-            else { Available_Fill6 = true; }
+                if (GetParam(element.FirstOrDefault(), "Fill6") == null)
+                    Available_Fill6 = false;
+                else { Available_Fill6 = true; }
+            }
+                
             #endregion
         }
 
@@ -576,7 +593,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     MessageBox.Show("Invalid selection or 'Mark' parameter missing.");
                 }
-                RequestCloseWindow?.Invoke();
+                //RequestCloseWindow?.Invoke();
             }
             
         }
