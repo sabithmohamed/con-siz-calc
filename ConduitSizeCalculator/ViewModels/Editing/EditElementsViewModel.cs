@@ -564,7 +564,11 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     using (var transaction = new Transaction(_uiDoc_edit.Document, "Set Mark Parameter"))
                     {
-                        ele.LookupParameter("Mark").Set(MarkText);
+                        if (MarkText != "<Multiple Selection>")
+                        {
+                            ele.LookupParameter("Mark").Set(MarkText);
+                        }
+                        
                     }
                     CloseAction?.Invoke(); // Close the view after setting the parameter
                 }

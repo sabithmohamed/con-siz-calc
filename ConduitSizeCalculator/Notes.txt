@@ -2,4 +2,4 @@
 MarkText => Currently, Setting Marktext can be done by both it's dedicated set button, or the overall set button at the bottom. NEED TO REMOVE THE DEDICATED BUTTON. Currently, the overall set
 button is disabled unless a change occurs in the conduit parameters. Need to find a way to enable it when the mark parameter changes too.
 
-Type/Instance params => All parameters except "Cable Destination" are working in Type
+Empty selection is causing a crash
