@@ -1063,11 +1063,11 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             {
                 try
                 {
-                    ConduitParameters.Fill.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), Fill);
+                    ConduitParameters.Fill.SetString(element, Fill);
                     ConduitParameters.Size.SetString(element, Size);
                     ConduitParameters.ConduitType.SetString(element, ConduitType);
                     ConduitParameters.Destination.SetString(element, Destination);
-                    ConduitParameters.CableDestination.SetString(element, CableDestination);
+                    ConduitParameters.CableDestination.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), CableDestination);
                     ConduitParameters.Mark.SetString(element, Mark);
                 }
                 catch 
