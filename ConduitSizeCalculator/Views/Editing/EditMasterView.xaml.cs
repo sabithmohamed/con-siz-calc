@@ -7,6 +7,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.Views
         public EditMasterView()
         {
             InitializeComponent();
+
         }
     }
 }

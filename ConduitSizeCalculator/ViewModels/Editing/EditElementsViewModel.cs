@@ -311,6 +311,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _markText = value;
                     NotifyPropertyChanged("MarkText");
+                    //SetMark(null);
                     Update = true;
                 }
             }
@@ -489,6 +490,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             OnCommit = onCommit ?? (Action)(() => { });
             PerformUpdates = true;
             SetMarkCommand = new RelayCommand(SetMark);
+            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             _uiDoc_edit = uiDoc;
             LoadInitialMarkValue();
         }
@@ -539,6 +541,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         {
             Parameter mark = element.LookupParameter(param_name);
             if (mark == null)
+            
             {
                 Element typ = _uiDoc_edit.Document.GetElement(element.GetTypeId());
                 mark = typ.LookupParameter(param_name);
@@ -562,9 +565,22 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     MessageBox.Show("Invalid selection or 'Mark' parameter missing.");
                 }
+                RequestCloseWindow?.Invoke();
             }
             
         }
+
+        public ICommand CloseWindowCommand { get; }
+
+        // Define an event to notify the request to close the window
+        public event Action RequestCloseWindow;
+
+        private void ExecuteCloseWindow(Object a)
+        {
+            // Raise the event when the command is executed
+            RequestCloseWindow?.Invoke();
+        }
+
         private new string ReduceString(string value)
         {
             return value?.Trim();

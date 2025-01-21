@@ -13,5 +13,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.Views
         {
 
         }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

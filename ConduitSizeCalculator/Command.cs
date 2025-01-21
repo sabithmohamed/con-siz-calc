@@ -11,6 +11,7 @@ using Autodesk.Revit.UI;
 using Idibri.RevitPlugin.ConduitSizeCalculator.Models;
 using Microsoft.Win32;
 using Idibri.RevitPlugin.Common;
+using Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels;
 
 namespace Idibri.RevitPlugin.ConduitSizeCalculator
 {
@@ -180,6 +181,11 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                         _uiDoc_master = uiDoc,
                     };
 
+                    masterViewModel.RequestCloseWindow += () =>
+                    {
+                        window.Close();
+                    };
+
                     window = new Window()
                     {
                         Content = new Views.EditMasterView(),
@@ -188,6 +194,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                         SizeToContent = SizeToContent.WidthAndHeight,
                         WindowStartupLocation = WindowStartupLocation.CenterScreen
                     };
+
+                    
 
                     window.SetBinding(Window.TitleProperty, "Title");
                     window.KeyUp += (s, e) => { if (e.Key == Key.Escape) { window.Close(); } };

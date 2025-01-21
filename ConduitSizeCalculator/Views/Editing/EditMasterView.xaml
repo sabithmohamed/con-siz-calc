@@ -96,7 +96,7 @@
                             Height="16"
                             Source="pack://application:,,,/ConduitSizeCalculator;component/Resources/Icons/Fam3/tick.png" />
                     </Button>
-                    
+
                     <Button
                         Command="{Binding EditElementsViewModel.RecalculateCommand}"
                         ToolTipService.ToolTip="Refresh Conduits"

@@ -73,6 +73,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (_editElementsViewModel == null)
                 {
                     EditElementsViewModel = new EditElementsViewModel(CommandSettings, ConduitUpdater, null, _uiDoc_master);
+                    EditElementsViewModel.RequestCloseWindow += OnRequestCloseWindow;
+
                 }
                 return _editElementsViewModel;
             }
@@ -97,6 +99,12 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             }
         }
         private EditElementsViewModel _editElementsViewModel;
+
+        private void OnRequestCloseWindow()
+        {
+            // Notify the command or parent to close the window
+            RequestCloseWindow?.Invoke();
+        }
 
         public EditCommandSettingsViewModel EditCommandSettingsViewModel
         {
@@ -214,6 +222,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 return _setViewModeCommand;
             }
         }
+
+        public event Action RequestCloseWindow;
+
         #endregion
 
         #region Save Command Settings
@@ -344,7 +355,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (DoneCanExecute(param))
             {
                 EditElementsViewModel.CommitCommand.Execute(null);
+                EditElementsViewModel.SetMarkCommand.Execute(null);
                 ViewModelIoc.OnDone();
+
             }
         }
 
