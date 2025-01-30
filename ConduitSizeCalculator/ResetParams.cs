@@ -54,28 +54,40 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
             "Conduit Type6"
             };
 
+            int success = 0;
+            int fail = 0;
 
             var t = new Transaction(doc, "Reset conduit params");
             t.Start();
             foreach (Element ele in eles)
             {
-                foreach (string paramtext in electricalParameters)
+                try
                 {
-                    try 
+                    foreach (string paramtext in electricalParameters)
                     {
-                        Parameter param = ele.LookupParameter(paramtext);
-                        param.Set(""); 
+                        try
+                        {
+                            Parameter param = ele.LookupParameter(paramtext);
+                            param.Set("");
+                        }
+                        catch
+                        {
+                            Element typ = doc.GetElement(ele.GetTypeId());
+                            Parameter param = typ.LookupParameter(paramtext);
+                            param.Set("");
+                        }
                     }
-                    catch 
-                    {
-                        Element typ = doc.GetElement(ele.GetTypeId());
-                        Parameter param = typ.LookupParameter(paramtext);
-                        param.Set("");
-                    }
-                    
+                    success++;
+                }
+                catch (Exception ex)
+                {
+                    fail++;
                 }
             }
             t.Commit();
+
+            string msg = $"Reset parameters:\n\nSuccess  : {success} element(s)\nFailed     : {fail} element(s)";
+            TaskDialog.Show("Error", msg);
             return Result.Succeeded;
         }
     }

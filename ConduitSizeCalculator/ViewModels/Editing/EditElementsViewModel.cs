@@ -433,6 +433,21 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             }
         }
 
+        private bool available_BackBoxProvidedBy;
+
+        public bool Available_BackBoxProvidedBy
+        {
+            get { return available_BackBoxProvidedBy; }
+            set
+            {
+                if (available_BackBoxProvidedBy != value)
+                {
+                    available_BackBoxProvidedBy = value;
+                    OnPropertyChanged(nameof(Available_BackBoxProvidedBy)); // Notify of the change if implementing INotifyPropertyChanged
+                }
+            }
+        }
+
         #endregion This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -549,6 +564,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (GetParam(element.FirstOrDefault(), "Fill6") == null)
                     Available_Fill6 = false;
                 else { Available_Fill6 = true; }
+
+                if (GetParam(element.FirstOrDefault(), "Back Box Provided By") == null)
+                    Available_BackBoxProvidedBy = false;
+                else { Available_BackBoxProvidedBy = true; }
             }
                 
             #endregion
@@ -593,7 +612,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     MessageBox.Show("Invalid selection or 'Mark' parameter missing.");
                 }
-                //RequestCloseWindow?.Invoke();
+                RequestCloseWindow?.Invoke();
             }
             
         }

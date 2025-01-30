@@ -126,7 +126,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             }
         }
         private EditCommandSettingsViewModel _editCommandSettingsViewModel;
-
         public List<Element> Elements
         {
             get { return _elements; }

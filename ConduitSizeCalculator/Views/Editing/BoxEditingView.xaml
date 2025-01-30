@@ -82,7 +82,8 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
-            Text="{Binding BackBoxProvidedBy, Mode=TwoWay}" />
+            Text="{Binding BackBoxProvidedBy, Mode=TwoWay}"
+            IsEnabled="{Binding DataContext.Available_BackBoxProvidedBy, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
         <TextBox
             Grid.Row="2"
             Grid.Column="3"
