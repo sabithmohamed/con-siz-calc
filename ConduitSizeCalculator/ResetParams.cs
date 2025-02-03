@@ -79,7 +79,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                     }
                     success++;
                 }
-                catch (Exception ex)
+                catch
                 {
                     fail++;
                 }

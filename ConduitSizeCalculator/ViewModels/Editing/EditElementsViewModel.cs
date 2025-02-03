@@ -304,7 +304,21 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
         public UIDocument _uiDoc_edit;
 
-        public bool MarkUpdate;
+        public bool MarkUpdate
+        {
+            get { return _markUpdate; }
+            set
+            {
+                if (_markUpdate != value)
+                {
+                    _markUpdate = value;
+                    MessageBox.Show("MarkUpdate Updated");
+                    NotifyPropertyChanged(nameof(MarkUpdate));
+                    NotifyPropertyChanged(nameof(MarkText));
+                }
+            }
+        }
+        private bool _markUpdate = true;
 
         private string _markText;
 
@@ -318,12 +332,14 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (_markText != value)
                 {
                     _markText = value;
-                    OnPropertyChanged(nameof(MarkText));
                     NotifyPropertyChanged(nameof(MarkText));
-
+                    NotifyPropertyChanged(nameof(MarkUpdate));
+                    MarkUpdate = true;
+                    
                 }
             }
         }
+
         private bool update = true;
         public bool Update
         {
@@ -359,7 +375,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         }
 
         private bool available_Fill2;
-
         public bool Available_Fill2
         {
             get { return available_Fill2; }
@@ -539,6 +554,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (element.Count > 0)
             {
                 MarkText = element.Count > 1 ? "<Multiple Selection>" : element.First().LookupParameter("Mark").AsString();
+                //MarkUpdate = false;
 
                 #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
                 if (GetParam(element.FirstOrDefault(), "Fill1") == null)
@@ -1360,7 +1376,22 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         }
         private bool _updateNemaType;
 
-        public bool UpdateAny { get { return UpdateBoxProperties || UpdateNotes || UpdateFlags || UpdateNemaType; } }
+        public bool UpdateMark
+        {
+            get { return _updateMark; }
+            set
+            {
+                if (_updateMark != value)
+                {
+                    _updateMark = value;
+                    NotifyPropertyChanged("UpdateMark");
+                }
+            }
+        }
+        private bool _updateMark;
+
+
+        public bool UpdateAny { get { return UpdateBoxProperties || UpdateNotes || UpdateFlags || UpdateNemaType || UpdateMark; } }
         #endregion
 
         #region Constructors
@@ -1463,7 +1494,16 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     if (UpdateFlags)
                     {
                         JunctionBoxParameters.CustomPanel.SetInt(element, IsCustomPanel ? 1 : 0);
-                        JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount ? 1 : 0);
+                        try
+                        {
+                            JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount ? 1 : 0);
+                        }
+                        catch
+                        {
+                            int paramvalue = IsFlushMount ? 0 : 1;
+                            element.LookupParameter("Surface Mount").Set(paramvalue);
+                        }
+                        
                     }
 
                     if (UpdateNemaType)

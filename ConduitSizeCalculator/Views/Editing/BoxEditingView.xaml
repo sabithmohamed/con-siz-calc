@@ -39,7 +39,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition />
             <RowDefinition Height="auto" />
             <RowDefinition Height="15" />
             <RowDefinition Height="auto" />
@@ -58,11 +58,21 @@
             Content="Update"
             IsChecked="{Binding UpdateBoxProperties, Mode=TwoWay}" />
 
+        <CheckBox
+
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Margin="0,-202,0,0"
+            Content="Update"
+            IsChecked="{Binding UpdateMark, Mode=TwoWay}" VerticalAlignment="Top" />
+
         <TextBlock
             Grid.Row="1"
             Grid.Column="1"
             Style="{StaticResource ColumnHeaderStyle}"
             Text="Back Box" />
+
         <TextBlock
             Grid.Row="1"
             Grid.Column="3"
@@ -82,8 +92,8 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
-            Text="{Binding BackBoxProvidedBy, Mode=TwoWay}"
-            IsEnabled="{Binding DataContext.Available_BackBoxProvidedBy, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            IsEnabled="{Binding DataContext.Available_BackBoxProvidedBy, RelativeSource={RelativeSource AncestorType=UserControl}}"
+            Text="{Binding BackBoxProvidedBy, Mode=TwoWay}" />
         <TextBox
             Grid.Row="2"
             Grid.Column="3"
