@@ -1122,27 +1122,27 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     if (Fill != "<Varies>")
                         ConduitParameters.Fill.SetString(element, Fill);
-                    if (Size != "<Varies>")
-                        ConduitParameters.Size.SetString(element, Size);
-                    if (ConduitType != "<Varies>")
-                        ConduitParameters.ConduitType.SetString(element, ConduitType);
-                    if (Destination != "<Varies>")
-                        ConduitParameters.Destination.SetString(element, Destination);
-                    if (CableDestination != "<Varies>")
-                        ConduitParameters.CableDestination.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), CableDestination);
+                        if (Size != "<Varies>")
+                            ConduitParameters.Size.SetString(element, Size);
+                        if (ConduitType != "<Varies>")
+                            ConduitParameters.ConduitType.SetString(element, ConduitType);
+                        if (Destination != "<Varies>")
+                            ConduitParameters.Destination.SetString(element, Destination);
+                        if (CableDestination != "<Varies>")
+                            ConduitParameters.CableDestination.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), CableDestination);
                 }
                 catch 
                 {
                     if (Fill != "<Varies>")
                         ConduitParameters.Fill.SetString(element, Fill);
-                    if (Size != "<Varies>")
-                        ConduitParameters.Size.SetString(element, Size);
-                    if (ConduitType != "<Varies>")
-                        ConduitParameters.ConduitType.SetString(element, ConduitType);
-                    if (Destination != "<Varies>")
-                        ConduitParameters.Destination.SetString(element, Destination);
-                    if (CableDestination != "<Varies>")
-                        ConduitParameters.CableDestination.SetString(element, CableDestination);
+                        if (Size != "<Varies>")
+                            ConduitParameters.Size.SetString(element, Size);
+                        if (ConduitType != "<Varies>")
+                            ConduitParameters.ConduitType.SetString(element, ConduitType);
+                        if (Destination != "<Varies>")
+                            ConduitParameters.Destination.SetString(element, Destination);
+                        if (CableDestination != "<Varies>")
+                            ConduitParameters.CableDestination.SetString(element, CableDestination);
                 }
                 
 

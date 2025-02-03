@@ -59,13 +59,13 @@
             IsChecked="{Binding UpdateBoxProperties, Mode=TwoWay}" />
 
         <CheckBox
-
             Grid.Row="1"
             Grid.Column="0"
-            HorizontalAlignment="Left"
             Margin="0,-202,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Content="Update"
-            IsChecked="{Binding UpdateMark, Mode=TwoWay}" VerticalAlignment="Top" />
+            IsChecked="{Binding UpdateMark, Mode=TwoWay}" />
 
         <TextBlock
             Grid.Row="1"
