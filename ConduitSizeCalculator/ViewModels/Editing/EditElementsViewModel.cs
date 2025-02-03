@@ -318,7 +318,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
             }
         }
-        private bool _markUpdate = true;
+        private bool _markUpdate;
 
         private string _markText;
 
@@ -334,7 +334,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     _markText = value;
                     NotifyPropertyChanged(nameof(MarkText));
                     NotifyPropertyChanged(nameof(MarkUpdate));
-                    MarkUpdate = true;
+                    //MarkUpdate = true;
                     
                 }
             }
@@ -1084,12 +1084,12 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
                 else
                 {
-                    if (fill != Fill) { Fill = null; }
-                    if (conduitType != ConduitType) { ConduitType = null; }
-                    if (size != Size) { Size = null; }
-                    if (destination != Destination) { Destination = null; }
-                    if (mark != Mark) { Mark = null; }
-                    if (cableDestination!= CableDestination) { CableDestination = null; }
+                    if (fill != Fill) { Fill = "<Varies>"; }
+                    if (conduitType != ConduitType) { ConduitType = "<Varies>"; }
+                    if (size != Size) { Size = "<Varies>"; }
+                    if (destination != Destination) { Destination = "<Varies>"; }
+                    if (mark != Mark) { Mark = "<Varies>"; }
+                    if (cableDestination!= CableDestination) { CableDestination = "<Varies>"; }
 
                 }
             }
@@ -1117,23 +1117,32 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (!Update) { return; }
             foreach (Element element in elements)
             {
+                
                 try
                 {
-                    ConduitParameters.Fill.SetString(element, Fill);
-                    ConduitParameters.Size.SetString(element, Size);
-                    ConduitParameters.ConduitType.SetString(element, ConduitType);
-                    ConduitParameters.Destination.SetString(element, Destination);
-                    ConduitParameters.CableDestination.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), CableDestination);
-                    ConduitParameters.Mark.SetString(element, Mark);
+                    if (Fill != "<Varies>")
+                        ConduitParameters.Fill.SetString(element, Fill);
+                    if (Size != "<Varies>")
+                        ConduitParameters.Size.SetString(element, Size);
+                    if (ConduitType != "<Varies>")
+                        ConduitParameters.ConduitType.SetString(element, ConduitType);
+                    if (Destination != "<Varies>")
+                        ConduitParameters.Destination.SetString(element, Destination);
+                    if (CableDestination != "<Varies>")
+                        ConduitParameters.CableDestination.SetString(uidoc_conduit.Document.GetElement(element.GetTypeId()), CableDestination);
                 }
                 catch 
                 {
-                    ConduitParameters.Fill.SetString(element, Fill);
-                    ConduitParameters.Size.SetString(element, Size);
-                    ConduitParameters.ConduitType.SetString(element, ConduitType);
-                    ConduitParameters.Destination.SetString(element, Destination);
-                    ConduitParameters.CableDestination.SetString(element, CableDestination);
-                    ConduitParameters.Mark.SetString(element, Mark);
+                    if (Fill != "<Varies>")
+                        ConduitParameters.Fill.SetString(element, Fill);
+                    if (Size != "<Varies>")
+                        ConduitParameters.Size.SetString(element, Size);
+                    if (ConduitType != "<Varies>")
+                        ConduitParameters.ConduitType.SetString(element, ConduitType);
+                    if (Destination != "<Varies>")
+                        ConduitParameters.Destination.SetString(element, Destination);
+                    if (CableDestination != "<Varies>")
+                        ConduitParameters.CableDestination.SetString(element, CableDestination);
                 }
                 
 

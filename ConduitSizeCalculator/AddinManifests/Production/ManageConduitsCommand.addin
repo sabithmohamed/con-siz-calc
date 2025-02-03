@@ -10,4 +10,14 @@
     <VendorId>IDB</VendorId>
     <VendorDescription>Idibri, idibri.com</VendorDescription>
   </AddIn>
+  <AddIn Type="Command">
+	<Assembly>ConduitSizeCalculator.dll</Assembly>
+	<ClientId>DD7370A3-391B-45B5-8EF7-8CEBC01B9C9F</ClientId>
+	<FullClassName>Idibri.RevitPlugin.ConduitSizeCalculator.ResetParams</FullClassName>
+	<Text>Reset Conduit Params</Text>
+	<Description>Reset values of the conduit parameters</Description>
+	<VisibilityMode>AlwaysVisible</VisibilityMode>
+	<VendorId>TBE</VendorId>
+	<VendorDescription>Mohamed Sabith, mohamedsabith@thebimengineers.com</VendorDescription>
+  </AddIn>
 </RevitAddIns>
