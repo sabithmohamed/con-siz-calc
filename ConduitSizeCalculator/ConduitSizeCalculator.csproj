@@ -254,6 +254,7 @@
     <Compile Include="Components\Exceptions.cs" />
     <Compile Include="Models\WorksetToCableScheduleMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FillParams.cs" />
     <Compile Include="ResetParams.cs" />
     <Compile Include="ViewModels\Editing\EditCommandSettingsViewModel.cs" />
     <Compile Include="ViewModels\Editing\EditElementsViewModel.cs" />
@@ -412,7 +413,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2024\"</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2023\"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\CommunityToolkit.Mvvm.8.4.0\build\CommunityToolkit.Mvvm.targets" Condition="Exists('..\packages\CommunityToolkit.Mvvm.8.4.0\build\CommunityToolkit.Mvvm.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
