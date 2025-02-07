@@ -1273,7 +1273,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         }
         private string _deviceInstalledBy;
 
-        public bool IsCustomPanel
+        public bool? IsCustomPanel
         {
             get { return _isCustomPanel; }
             set
@@ -1286,9 +1286,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
             }
         }
-        private bool _isCustomPanel;
+        private bool? _isCustomPanel;
 
-        public bool IsFlushMount
+        public bool? IsFlushMount
         {
             get { return _isFlushMount; }
             set
@@ -1301,7 +1301,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
             }
         }
-        private bool _isFlushMount;
+        private bool? _isFlushMount;
 
         public string Notes
         {
@@ -1451,8 +1451,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 string panelInstalledBy = JunctionBoxParameters.PanelInstalledBy.GetString(element);
                 string deviceProvidedBy = JunctionBoxParameters.DeviceProvidedBy.GetString(element);
                 string deviceInstalledBy = JunctionBoxParameters.DeviceInstalledBy.GetString(element);
-                bool isCustomPanel;
-                bool isFlushMount;
+                bool? isCustomPanel;
+                bool? isFlushMount;
 
                 Parameter custompanel = element.LookupParameter("Custom Panel");
                 if (custompanel != null)
@@ -1501,8 +1501,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     if (deviceProvidedBy != DeviceProvidedBy) { DeviceProvidedBy = "<Varies>"; }
                     if (deviceInstalledBy != DeviceInstalledBy) { DeviceInstalledBy = "<Varies>"; }
 
-                    if (isCustomPanel != IsCustomPanel) { IsCustomPanel = false; }
-                    if (isFlushMount != IsFlushMount) { IsFlushMount = false; }
+                    if (isCustomPanel != IsCustomPanel) { IsCustomPanel = null; }
+                    if (isFlushMount != IsFlushMount) { IsFlushMount = null; }
 
                     if (notes != Notes) { Notes = "<Varies>"; }
 
@@ -1538,34 +1538,34 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                             JunctionBoxParameters.DeviceInstalledBy.SetString(element, DeviceInstalledBy);
                     }
 
-                    if (UpdateFlags)
+                    if (UpdateFlags && IsCustomPanel != null && IsFlushMount !=null)
                     {
                         try
                         {
-                            JunctionBoxParameters.CustomPanel.SetInt(element, IsCustomPanel ? 1 : 0);
+                            JunctionBoxParameters.CustomPanel.SetInt(element, IsCustomPanel == true ? 1 : 0);
                         }
                         catch
                         {
                             Element typ = element.Document.GetElement(element.GetTypeId());
-                            JunctionBoxParameters.CustomPanel.SetInt(typ, IsCustomPanel ? 1 : 0);
+                            JunctionBoxParameters.CustomPanel.SetInt(typ, IsCustomPanel == true ? 1 : 0);
                         }
 
                         try
                         {
                             try
                             {
-                                JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount ? 1 : 0);
+                                JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount == true ? 1 : 0);
                             }
                             catch
                             {
                                 Element typ = element.Document.GetElement(element.GetTypeId());
-                                JunctionBoxParameters.FlushMount.SetInt(typ, IsFlushMount ? 1 : 0);
+                                JunctionBoxParameters.FlushMount.SetInt(typ, IsFlushMount == true ? 1 : 0);
                             }
                             
                         }
                         catch
                         {
-                            int paramvalue = IsFlushMount ? 0 : 1;
+                            int paramvalue = IsFlushMount == true ? 0 : 1;
                             try
                             {
                                 element.LookupParameter("Surface Mount").Set(paramvalue);

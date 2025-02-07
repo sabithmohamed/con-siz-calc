@@ -94,14 +94,14 @@
                         MinWidth="115"
                         HorizontalAlignment="Left"
                         Text="{Binding MarkText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                   
+
                     <CheckBox
                         Grid.Row="1"
                         Grid.Column="0"
                         HorizontalAlignment="Left"
                         Content="Update"
-                        IsChecked="{Binding MarkUpdate, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                    
+                        IsChecked="{Binding MarkUpdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
                 </StackPanel>
 
                 <!--#endregion-->

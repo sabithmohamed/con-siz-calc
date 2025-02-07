@@ -136,14 +136,16 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="Custom Panel"
-            IsChecked="{Binding IsCustomPanel, Mode=TwoWay}" />
+            IsChecked="{Binding IsCustomPanel, Mode=TwoWay}"
+            IsThreeState="True" />
         <CheckBox
             Grid.Row="5"
             Grid.Column="3"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="Flush Mount"
-            IsChecked="{Binding IsFlushMount, Mode=TwoWay}" />
+            IsChecked="{Binding IsFlushMount, Mode=TwoWay}"
+            IsThreeState="True" />
 
         <!--  Space  -->
 
