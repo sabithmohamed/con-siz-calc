@@ -1433,23 +1433,49 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             UpdateNemaType = false;
         }
 
+        public bool IsType;
         public void SetFromElements(IEnumerable<Element> elements)
         {
             Clear();
             if (elements == null) { return; }
 
             int i = 0;
-
+            
+            
             foreach (Element element in elements)
             {
+                
                 string backBoxProvidedBy = JunctionBoxParameters.BackBoxProvidedBy.GetString(element);
                 string backBoxInstalledBy = JunctionBoxParameters.BackBoxInstalledBy.GetString(element);
                 string panelProvidedBy = JunctionBoxParameters.PanelProvidedBy.GetString(element);
                 string panelInstalledBy = JunctionBoxParameters.PanelInstalledBy.GetString(element);
                 string deviceProvidedBy = JunctionBoxParameters.DeviceProvidedBy.GetString(element);
                 string deviceInstalledBy = JunctionBoxParameters.DeviceInstalledBy.GetString(element);
-                bool isCustomPanel = JunctionBoxParameters.CustomPanel.GetInt(element) == 0 ? false : true;
-                bool isFlushMount = JunctionBoxParameters.FlushMount.GetInt(element) == 0 ? false : true;
+                bool isCustomPanel;
+                bool isFlushMount;
+
+                Parameter custompanel = element.LookupParameter("Custom Panel");
+                if (custompanel != null)
+                {
+                    isCustomPanel = JunctionBoxParameters.CustomPanel.GetInt(element) == 0 ? false : true;
+                }
+                else
+                {
+                    Element typ = element.Document.GetElement(element.GetTypeId());
+                    isCustomPanel = JunctionBoxParameters.CustomPanel.GetInt(typ) == 0 ? false : true;
+                }
+
+                Parameter flushmount = element.LookupParameter("Flush Mount");
+                if (flushmount != null)
+                {
+                    isFlushMount = JunctionBoxParameters.FlushMount.GetInt(element) == 0 ? false : true;
+                }
+                else
+                {
+                    Element typ = element.Document.GetElement(element.GetTypeId());
+                    isFlushMount = JunctionBoxParameters.FlushMount.GetInt(typ) == 0 ? false : true;
+                }
+                
                 string notes = JunctionBoxParameters.Notes.GetString(element);
                 string nemaType = JunctionBoxParameters.NemaType.GetString(element);
 
@@ -1514,17 +1540,43 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
                     if (UpdateFlags)
                     {
-                        JunctionBoxParameters.CustomPanel.SetInt(element, IsCustomPanel ? 1 : 0);
                         try
                         {
-                            JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount ? 1 : 0);
+                            JunctionBoxParameters.CustomPanel.SetInt(element, IsCustomPanel ? 1 : 0);
+                        }
+                        catch
+                        {
+                            Element typ = element.Document.GetElement(element.GetTypeId());
+                            JunctionBoxParameters.CustomPanel.SetInt(typ, IsCustomPanel ? 1 : 0);
+                        }
+
+                        try
+                        {
+                            try
+                            {
+                                JunctionBoxParameters.FlushMount.SetInt(element, IsFlushMount ? 1 : 0);
+                            }
+                            catch
+                            {
+                                Element typ = element.Document.GetElement(element.GetTypeId());
+                                JunctionBoxParameters.FlushMount.SetInt(typ, IsFlushMount ? 1 : 0);
+                            }
+                            
                         }
                         catch
                         {
                             int paramvalue = IsFlushMount ? 0 : 1;
-                            element.LookupParameter("Surface Mount").Set(paramvalue);
+                            try
+                            {
+                                element.LookupParameter("Surface Mount").Set(paramvalue);
+                            }
+                            catch
+                            {
+                                Element typ = element.Document.GetElement(element.GetTypeId());
+                                typ.LookupParameter("Surface Mount").Set(paramvalue);
+                            }
+                            
                         }
-                        
                     }
 
                     if (UpdateNemaType && NemaType != "<Varies>") 
