@@ -1468,19 +1468,19 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 }
                 else
                 {
-                    if (backBoxProvidedBy != BackBoxProvidedBy) { BackBoxProvidedBy = null; }
-                    if (backBoxInstalledBy != BackBoxInstalledBy) { BackBoxInstalledBy = null; }
-                    if (panelProvidedBy != PanelProvidedBy) { PanelProvidedBy = null; }
-                    if (panelInstalledBy != PanelInstalledBy) { PanelInstalledBy = null; }
-                    if (deviceProvidedBy != DeviceProvidedBy) { DeviceProvidedBy = null; }
-                    if (deviceInstalledBy != DeviceInstalledBy) { DeviceInstalledBy = null; }
+                    if (backBoxProvidedBy != BackBoxProvidedBy) { BackBoxProvidedBy = "<Varies>"; }
+                    if (backBoxInstalledBy != BackBoxInstalledBy) { BackBoxInstalledBy = "<Varies>"; }
+                    if (panelProvidedBy != PanelProvidedBy) { PanelProvidedBy = "<Varies>"; }
+                    if (panelInstalledBy != PanelInstalledBy) { PanelInstalledBy = "<Varies>"; }
+                    if (deviceProvidedBy != DeviceProvidedBy) { DeviceProvidedBy = "<Varies>"; }
+                    if (deviceInstalledBy != DeviceInstalledBy) { DeviceInstalledBy = "<Varies>"; }
 
                     if (isCustomPanel != IsCustomPanel) { IsCustomPanel = false; }
                     if (isFlushMount != IsFlushMount) { IsFlushMount = false; }
 
-                    if (notes != Notes) { Notes = null; }
+                    if (notes != Notes) { Notes = "<Varies>"; }
 
-                    if (nemaType != NemaType) { NemaType = null; }
+                    if (nemaType != NemaType) { NemaType = "<Varies>"; }
                 }
 
                 UpdateBoxProperties = false;
@@ -1498,12 +1498,18 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     if (UpdateBoxProperties)
                     {
-                        JunctionBoxParameters.BackBoxProvidedBy.SetString(element, BackBoxProvidedBy);
-                        JunctionBoxParameters.BackBoxInstalledBy.SetString(element, BackBoxInstalledBy);
-                        JunctionBoxParameters.PanelProvidedBy.SetString(element, PanelProvidedBy);
-                        JunctionBoxParameters.PanelInstalledBy.SetString(element, PanelInstalledBy);
-                        JunctionBoxParameters.DeviceProvidedBy.SetString(element, DeviceProvidedBy);
-                        JunctionBoxParameters.DeviceInstalledBy.SetString(element, DeviceInstalledBy);
+                        if (BackBoxProvidedBy != "<Varies>")
+                            JunctionBoxParameters.BackBoxProvidedBy.SetString(element, BackBoxProvidedBy);
+                        if (BackBoxInstalledBy != "<Varies>") 
+                            JunctionBoxParameters.BackBoxInstalledBy.SetString(element, BackBoxInstalledBy);
+                        if (PanelProvidedBy != "<Varies>") 
+                            JunctionBoxParameters.PanelProvidedBy.SetString(element, PanelProvidedBy);
+                        if (PanelInstalledBy != "<Varies>") 
+                            JunctionBoxParameters.PanelInstalledBy.SetString(element, PanelInstalledBy);
+                        if (DeviceProvidedBy != "<Varies>") 
+                            JunctionBoxParameters.DeviceProvidedBy.SetString(element, DeviceProvidedBy);
+                        if (DeviceInstalledBy != "<Varies>") 
+                            JunctionBoxParameters.DeviceInstalledBy.SetString(element, DeviceInstalledBy);
                     }
 
                     if (UpdateFlags)
@@ -1521,12 +1527,12 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                         
                     }
 
-                    if (UpdateNemaType)
+                    if (UpdateNemaType && NemaType != "<Varies>") 
                     {
                         JunctionBoxParameters.NemaType.SetString(element, NemaType);
                     }
 
-                    if (UpdateNotes)
+                    if (UpdateNotes && Notes != "<Varies>")
                     {
                         JunctionBoxParameters.Notes.SetString(element, Notes);
                     }

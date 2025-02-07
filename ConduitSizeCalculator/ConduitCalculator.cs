@@ -75,7 +75,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
         {
             string cableDefinition = (conduitParams.Fill.GetString(element) ?? "").Trim();
             string mark = element.get_Parameter(BuiltInParameter.ALL_MODEL_MARK).AsString();
-            //string mark = (conduitParams.Mark.GetString(element) ?? "").Trim();
             string conduitType = (conduitParams.ConduitType.GetString(element) ?? "").Trim();
             string newConduitSize = null;
 
@@ -91,7 +90,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                 ConduitCalculationResult result = GetNewConduitSize(commandSettings, cableDefinition, param, conduitType, currentConduitName);
                 newConduitSize = result.Description;
             }
-            conduitParams.Mark.SetString(element, mark);
             conduitParams.Size.SetString(element, newConduitSize);
         }
 
