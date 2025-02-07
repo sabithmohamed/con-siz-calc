@@ -312,9 +312,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (_markUpdate != value)
                 {
                     _markUpdate = value;
-                    MessageBox.Show("MarkUpdate Updated");
+                    //MessageBox.Show("MarkUpdate Updated");
                     NotifyPropertyChanged(nameof(MarkUpdate));
-                    NotifyPropertyChanged(nameof(MarkText));
                 }
             }
         }
@@ -334,8 +333,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                     _markText = value;
                     NotifyPropertyChanged(nameof(MarkText));
                     NotifyPropertyChanged(nameof(MarkUpdate));
-                    //MarkUpdate = true;
-                    
+                    Update = true;
+                    MarkUpdate = true;
+
                 }
             }
         }
@@ -554,7 +554,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (element.Count > 0)
             {
                 MarkText = element.Count > 1 ? "<Multiple Selection>" : element.First().LookupParameter("Mark").AsString();
-                //MarkUpdate = false;
+                MarkUpdate = false;
 
                 #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
                 if (GetParam(element.FirstOrDefault(), "Fill1") == null)
@@ -867,7 +867,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _conduitType = value;
                     NotifyPropertyChanged("ConduitType");
-                    ConduitsOfType = ConduitSchedule.GetConduitsOfType(_conduitType);
+                    ConduitsOfType = ConduitSchedule.GetConduitsOfType(_conduitType); 
+                    Update = true;
                 }
             }
         }
@@ -883,6 +884,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _size = value;
                     NotifyPropertyChanged("Size");
+                    Update = true;
                 }
             }
         }
@@ -897,6 +899,9 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _destination = value;
                     NotifyPropertyChanged("Destination");
+                    
+                    
+                    Update = true;
                 }
             }
         }
@@ -910,7 +915,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (_cabledestination != value)
                 {
                     _cabledestination = value;
-                    NotifyPropertyChanged("Cable Destination");
+                    NotifyPropertyChanged("CableDestination");
+                    Update = true;
                 }
             }
         }
@@ -1099,7 +1105,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 ConduitType = null;
             }
 
-            Update = Fill != null && Destination != null && Mark != null;
+            Update = Fill != null && Destination != null && Mark != null && Size != null && Mark != null;
         }
 
         public void UpdateSize(CommandSettings commandSettings, IConduitCalculator conduitUpdater, CalculateConduitParameter parameter)
