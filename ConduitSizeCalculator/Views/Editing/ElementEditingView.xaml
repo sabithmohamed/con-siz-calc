@@ -85,6 +85,7 @@
                     HorizontalAlignment="Right"
                     Style="{StaticResource RowHeaderStyle}"
                     Text="Mark" />
+                
                 <StackPanel
                     Grid.Row="2"
                     Grid.Column="2"
@@ -93,14 +94,7 @@
                         Width="Auto"
                         MinWidth="115"
                         HorizontalAlignment="Left"
-                        Text="{Binding MarkText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
-                    <CheckBox
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        HorizontalAlignment="Left"
-                        Content="Update"
-                        IsChecked="{Binding MarkUpdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        Text="{Binding MarkText, Mode=TwoWay}" />
 
                 </StackPanel>
 

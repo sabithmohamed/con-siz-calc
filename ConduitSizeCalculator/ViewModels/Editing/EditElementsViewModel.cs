@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Idibri.RevitPlugin.Common.Infrastructure;
@@ -304,21 +305,6 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
         public UIDocument _uiDoc_edit;
 
-        public bool MarkUpdate
-        {
-            get { return _markUpdate; }
-            set
-            {
-                if (_markUpdate != value)
-                {
-                    _markUpdate = value;
-                    //MessageBox.Show("MarkUpdate Updated");
-                    NotifyPropertyChanged(nameof(MarkUpdate));
-                }
-            }
-        }
-        private bool _markUpdate;
-
         private string _markText;
 
         // Properties
@@ -332,10 +318,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     _markText = value;
                     NotifyPropertyChanged(nameof(MarkText));
-                    NotifyPropertyChanged(nameof(MarkUpdate));
-                    Update = true;
-                    MarkUpdate = true;
-
+                    BoxViewModel.UpdateMark = true;
                 }
             }
         }
@@ -504,7 +487,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         #region Commit
         private bool CommitCanExecute(object param)
         {
-            return WorksetCableSchedulePair != null && CurrentCableSchedule != null && (ConduitModels.Any(cf => cf.Update) || BoxViewModel.UpdateAny || MarkUpdate);
+            return WorksetCableSchedulePair != null && CurrentCableSchedule != null && (ConduitModels.Any(cf => cf.Update) || BoxViewModel.UpdateAny );
         }
 
         private void CommitExecuted(object param)
@@ -554,7 +537,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             if (element.Count > 0)
             {
                 MarkText = element.Count > 1 ? "<Multiple Selection>" : element.First().LookupParameter("Mark").AsString();
-                MarkUpdate = false;
+                BoxViewModel.UpdateMark = false;
 
                 #region  This part is for controlling the IsEnabled property of the rows based on whether or not the Fill1,Fill2.. parameters are available in the elements
                 if (GetParam(element.FirstOrDefault(), "Fill1") == null)
@@ -1128,7 +1111,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     if (Fill != "<Varies>")
                         ConduitParameters.Fill.SetString(element, Fill);
-                        if (Size != "<Varies>")
+                        if (Size != "<Varies>" && Size != "INVALID CABLING")
                             ConduitParameters.Size.SetString(element, Size);
                         if (ConduitType != "<Varies>")
                             ConduitParameters.ConduitType.SetString(element, ConduitType);
@@ -1141,7 +1124,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 {
                     if (Fill != "<Varies>")
                         ConduitParameters.Fill.SetString(element, Fill);
-                        if (Size != "<Varies>")
+                        if (Size != "<Varies>" && Size != "INVALID CABLING")
                             ConduitParameters.Size.SetString(element, Size);
                         if (ConduitType != "<Varies>")
                             ConduitParameters.ConduitType.SetString(element, ConduitType);
