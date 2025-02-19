@@ -1,75 +1,97 @@
-﻿<UserControl x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.OversizedConduitsReportingView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
-             xmlns:uc="clr-namespace:Idibri.RevitPlugin.Common.UserControls;assembly=Idibri.RevitPlugin.Common"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
+﻿<UserControl
+    x:Class="Idibri.RevitPlugin.ConduitSizeCalculator.Views.OversizedConduitsReportingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="clr-namespace:Idibri.RevitPlugin.Common.Converters;assembly=Idibri.RevitPlugin.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:Idibri.RevitPlugin.Common.UserControls;assembly=Idibri.RevitPlugin.Common"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Idibri.RevitPlugin.Common;component/Resources/GlobalStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
-      <conv:NullnessToVisibilityConverter x:Key="NullToVisibleConverter" Reversed="True" />
-      <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
-      <conv:DoubleToImperialLengthConverter x:Key="DoubleToImperialLengthConverter" />
-      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleEqualToVisibleConverter" ComparisonType="Equal"/>
-      <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleNotEqualToVisibleConverter" ComparisonType="NotEqual"/>
-    </ResourceDictionary>
-  </UserControl.Resources>
-  <Grid Background="Transparent">
-    <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}"/>
-    <Grid Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
-      <TextBlock Text="No boxes with oversized conduits found" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}"/>
-      <uc:StretchingTreeView ItemsSource="{Binding JunctionBoxGroups}" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
-        <uc:StretchingTreeView.ItemContainerStyle>
-          <Style TargetType="TreeViewItem">
-            <Setter Property="IsExpanded" Value="{Binding IsExpanded}"/>
-          </Style>
-        </uc:StretchingTreeView.ItemContainerStyle>
-        <uc:StretchingTreeView.ItemTemplate>
-          <HierarchicalDataTemplate ItemsSource="{Binding OffendingJunctionBoxes}">
-            <HierarchicalDataTemplate.ItemTemplate>
-              <HierarchicalDataTemplate ItemsSource="{Binding OversizedConduits}">
-                <HierarchicalDataTemplate.ItemTemplate>
-                  <DataTemplate>
-                    <Grid>
-                      <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="75"/>
-                        <ColumnDefinition Width="75"/>
-                      </Grid.ColumnDefinitions>
-                      <TextBlock Grid.Column="0">
-                                                <Run Text="#"/>
-                                                <Run Text="{Binding Index, Mode=OneWay}"/>
-                      </TextBlock>
-                      <TextBlock Grid.Column="1" Text="{Binding Conduit.Name}"/>
-                      <TextBlock Grid.Column="2" Text="{Binding Conduit.OutsideDiameterIn, Converter={StaticResource DoubleToImperialLengthConverter}}"/>
-                    </Grid>
-                  </DataTemplate>
-                </HierarchicalDataTemplate.ItemTemplate>
-                <Grid>
-                  <Grid.ContextMenu>
-                    <ContextMenu>
-                      <MenuItem Command="{Binding SelectElementCommand}" CommandParameter="{Binding}" Header="Show Element"/>
-                    </ContextMenu>
-                  </Grid.ContextMenu>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                  </Grid.ColumnDefinitions>
-                  <TextBlock Grid.Column="0" Text="{Binding JunctionBox.Mark}" Padding="0,0,5,0"/>
-                  <TextBlock Grid.Column="1" Text="{Binding JunctionBox.DepthIn, Converter={StaticResource DoubleToImperialLengthConverter}}"/>
-                </Grid>
-              </HierarchicalDataTemplate>
-            </HierarchicalDataTemplate.ItemTemplate>
-            <TextBlock Text="{Binding Name, Mode=OneWay}"/>
-          </HierarchicalDataTemplate>
-        </uc:StretchingTreeView.ItemTemplate>
-      </uc:StretchingTreeView>
+            <conv:NullnessToVisibilityConverter x:Key="NullToVisibleConverter" Reversed="True" />
+            <conv:NullnessToVisibilityConverter x:Key="NotNullToVisibleConverter" />
+            <conv:DoubleToImperialLengthConverter x:Key="DoubleToImperialLengthConverter" />
+            <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleEqualToVisibleConverter" ComparisonType="Equal" />
+            <conv:DoubleComparisonToVisibilityConverter x:Key="DoubleNotEqualToVisibleConverter" ComparisonType="NotEqual" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Text="#" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Grid.Column="2" Text="Conduit_Size" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Grid.Column="3" Text="OD" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}" />
+        <Grid Grid.Row="1" Grid.ColumnSpan="5" Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
+            <TextBlock Text="No boxes with oversized conduits found" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
+            <uc:StretchingTreeView ItemsSource="{Binding JunctionBoxGroups}" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
+                <uc:StretchingTreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded}" />
+                    </Style>
+                </uc:StretchingTreeView.ItemContainerStyle>
+                <uc:StretchingTreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding OffendingJunctionBoxes}">
+                        <HierarchicalDataTemplate.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding OversizedConduits}">
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="85" />
+                                                <ColumnDefinition Width="85" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" TextAlignment="Center">
+                                                <Run Text="#" />
+                                                <Run Text="{Binding Index, Mode=OneWay}" />
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="1" Text="{Binding Conduit.Name}" TextAlignment="Center" />
+                                            <TextBlock Grid.Column="2" TextAlignment="Center" Text="{Binding Conduit.OutsideDiameterIn , Converter={StaticResource DoubleToImperialLengthConverter}}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                                <Grid>
+                                    <Grid.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem
+                                                Command="{Binding SelectElementCommand}"
+                                                CommandParameter="{Binding}"
+                                                Header="Show Element" />
+                                        </ContextMenu>
+                                    </Grid.ContextMenu>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        Padding="0,0,5,0"
+                                        Text="{Binding JunctionBox.Mark}" />
+                                    <TextBlock Grid.Column="1" Text="{Binding JunctionBox.DepthIn, Converter={StaticResource DoubleToImperialLengthConverter}}" />
+                                </Grid>
+                            </HierarchicalDataTemplate>
+                        </HierarchicalDataTemplate.ItemTemplate>
+                        <TextBlock Text="{Binding Name, Mode=OneWay}" />
+                    </HierarchicalDataTemplate>
+                </uc:StretchingTreeView.ItemTemplate>
+            </uc:StretchingTreeView>
+        </Grid>
     </Grid>
-  </Grid>
 </UserControl>
