@@ -39,7 +39,7 @@
         <TextBlock Grid.Column="3" Text="OD" FontWeight="Bold" TextAlignment="Center"/>
         <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}" />
         <Grid Grid.Row="1" Grid.ColumnSpan="5" Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
-            <TextBlock Text="No boxes with oversized conduits found" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
+            <TextBlock Text="No boxes with oversized conduits found" Margin=" 5,10,0,0" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
             <uc:StretchingTreeView ItemsSource="{Binding JunctionBoxGroups}" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
                 <uc:StretchingTreeView.ItemContainerStyle>
                     <Style TargetType="TreeViewItem">

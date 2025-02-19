@@ -239,7 +239,13 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
 
         public bool IsUsableElement(Element element)
         {
-            return element.get_Parameter(JunctionBoxConduits.Conduit1.Size.Id) != null;
+            Parameter size1 = element.LookupParameter("Size1");
+            if (size1 == null)
+            {
+                Element typ = element.Document.GetElement(element.GetTypeId());
+                size1 = typ.LookupParameter("Size1");
+            }
+            return size1 != null;
         }
         #endregion
     }

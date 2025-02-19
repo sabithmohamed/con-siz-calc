@@ -243,6 +243,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 OffendingJunctionBoxes = new List<OffendingJunctionBox>(JunctionBoxes.Select(jb => GetOffendingJunctionBox(jb)).Where(jb => jb.UnmatchedConduits.Count != 0));
 
                 Dictionary<string, List<OffendingJunctionBox>> groups = new Dictionary<string, List<OffendingJunctionBox>>();
+
                 foreach (OffendingJunctionBox jb in OffendingJunctionBoxes)
                 {
                     string worksetName = DocumentHelper.GetWorkset(jb.JunctionBox.Element).Name;

@@ -16,38 +16,39 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
         {
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
-            
+
+            string mark = null;
 
             var eles = uidoc.Selection.GetElementIds().Select(x => doc.GetElement(x)).ToList();
             Dictionary<string, string> electricalParameters = new Dictionary<string, string>
             {
                 { "Size1", "3/4\"" },
-                { "Destination1", "Cond 1" },
+                { "Destination1", null },
                 { "Fill1", "1A1" },
                 { "Conduit Type1", "EMT" },
                 { "Cable Destination 1", "Cab 1" },
                 { "Size2", "3/4\"" },
-                { "Destination2", "Cond 2" },
+                { "Destination2", null },
                 { "Fill2", "2A1" },
                 { "Conduit Type2", "EMT" },
                 { "Cable Destination 2", "Cab 2" },
                 { "Size3", "3/4\"" },
-                { "Destination3", "Cond 3" },
+                { "Destination3", null },
                 { "Fill3", "3A1" },
                 { "Conduit Type3", "EMT" },
                 { "Cable Destination 3", "Cab 3" },
                 { "Size4", "3/4\"" },
-                { "Destination4", "Cond 4" },
+                { "Destination4", null },
                 { "Fill4", "4A1" },
                 { "Conduit Type4", "EMT" },
                 { "Cable Destination 4", "Cab 4" },
                 { "Size5", "3/4\"" },
-                { "Destination5", "Cond 5" },
+                { "Destination5", null },
                 { "Fill5", "5A1" },
                 { "Conduit Type5", "EMT" },
                 { "Cable Destination 5", "Cab 5" },
                 { "Size6", "3/4\"" },
-                { "Destination6", "Cond 6" },
+                { "Destination6", null },
                 { "Fill6", "6A1" },
                 { "Conduit Type6", "EMT" },
                 { "Cable Destination 6", "Cab 6" },
@@ -60,10 +61,21 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
             t.Start();
             foreach (Element ele in eles)
             {
+                
                 try
                 {
+                    foreach (KeyValuePair<string, string> paramtext in electricalParameters)
+                    {
+                        if (paramtext.Key.ToString().Contains("Destination"))
+                        {
+                            electricalParameters[paramtext.Key] = mark;
+                        }
+                    }
+
+
                     foreach (KeyValuePair<string,string> paramtext in electricalParameters)
                     {
+                        mark = ele.LookupParameter("Mark").AsString();
                         try
                         {
                             Parameter param = ele.LookupParameter(paramtext.Key);
@@ -71,6 +83,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                         }
                         catch
                         {
+                            if (paramtext.Key.ToString().Contains("Destination"))
+                            {
+                                electricalParameters[paramtext.Key] = mark;
+                            }
                             Element typ = doc.GetElement(ele.GetTypeId());
                             Parameter param = typ.LookupParameter(paramtext.Key);
                             param.Set(paramtext.Value);

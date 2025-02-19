@@ -100,7 +100,18 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 conduit = conduitSchedule.GetConduit(conduitType, size);
             }
 
-            return new ConduitDefinition(index, conduit, ReduceString(parameters.Destination.GetString(Element)));
+            string destination = null;
+            Parameter destination_param = Element.LookupParameter("Destination" + index);
+            if (destination_param != null)
+                destination = destination_param.AsString();
+            else
+            {
+                Element typ = Element.Document.GetElement(Element.GetTypeId());
+                destination_param = typ.LookupParameter("Destination" + index);
+                if (destination_param != null)
+                    destination = destination_param.AsString();
+            }
+            return new ConduitDefinition(index, conduit, destination);
         }
         #endregion
     }
