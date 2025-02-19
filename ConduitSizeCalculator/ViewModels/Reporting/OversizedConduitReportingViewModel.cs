@@ -213,11 +213,12 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         private OffendingJunctionBox GetOffendingJunctionBox(JunctionBox junctionBox)
         {
             OffendingJunctionBox offendingJunctionBox = new OffendingJunctionBox(this, junctionBox);
-
+            var y = junctionBox.Conduits;
             foreach (ConduitDefinition cd in junctionBox.Conduits)
             {
                 if (cd.Conduit != null && cd.Conduit.OutsideDiameterIn + DepthBufferIn > junctionBox.DepthIn)
                 {
+                    bool big = cd.Conduit.OutsideDiameterIn + DepthBufferIn > junctionBox.DepthIn;
                     offendingJunctionBox.OversizedConduits.Add(cd);
                 }
             }

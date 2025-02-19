@@ -35,6 +35,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public ConduitDefinition Conduit2 { get; private set; }
         public ConduitDefinition Conduit3 { get; private set; }
         public ConduitDefinition Conduit4 { get; private set; }
+        public ConduitDefinition Conduit5 { get; private set; }
+        public ConduitDefinition Conduit6 { get; private set; }
 
         public IEnumerable<ConduitDefinition> Conduits
         {
@@ -44,6 +46,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 yield return Conduit2;
                 yield return Conduit3;
                 yield return Conduit4;
+                yield return Conduit5;
+                yield return Conduit6;
             }
         }
         #endregion
@@ -55,7 +59,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             Mark = Element.get_Parameter(BuiltInParameter.ALL_MODEL_MARK).AsString();
 
             // These values are in feet, we want it in inches.
-            DepthIn = JunctionBoxParameters.Depth.GetDouble(Element) * 12.0;
+            Element typ = Element.Document.GetElement(Element.GetTypeId());
+
+            Parameter depth_param = Element.LookupParameter("Depth");
+            DepthIn = depth_param != null ? depth_param.AsDouble() * 12.0 : typ.LookupParameter("Depth").AsDouble() * 12.0;
             HeightIn = JunctionBoxParameters.Height.GetDouble(Element) * 12.0;
             WidthIn = JunctionBoxParameters.Width.GetDouble(Element) * 12.0;
 
@@ -63,6 +70,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             Conduit2 = GetConduit(2, JunctionBoxConduits.Conduit2, conduitSchedule, defaultConduitType);
             Conduit3 = GetConduit(3, JunctionBoxConduits.Conduit3, conduitSchedule, defaultConduitType);
             Conduit4 = GetConduit(4, JunctionBoxConduits.Conduit4, conduitSchedule, defaultConduitType);
+            Conduit5 = GetConduit(5, JunctionBoxConduits.Conduit5, conduitSchedule, defaultConduitType);
+            Conduit6 = GetConduit(6, JunctionBoxConduits.Conduit6, conduitSchedule, defaultConduitType);
         }
         #endregion
 
@@ -70,7 +79,20 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         private ConduitDefinition GetConduit(int index, ConduitParameters parameters, ConduitSchedule conduitSchedule, string defaultConduitType)
         {
             string conduitType = ReduceString(parameters.ConduitType.GetString(Element)) ?? defaultConduitType;
-            string size = parameters.Size.GetString(Element);
+            string size = null;
+
+            Parameter size_param = Element.LookupParameter("Size" + index);
+            if (size_param != null)
+                size = size_param.AsString();
+            else
+            {
+                Element typ = Element.Document.GetElement(Element.GetTypeId());
+                size_param = typ.LookupParameter("Size" + index);
+                if (size_param != null)
+                    size = size_param.AsString();
+            }
+
+
             Conduit conduit = null;
 
             if (conduitSchedule.ContainsConduit(conduitType, size))
