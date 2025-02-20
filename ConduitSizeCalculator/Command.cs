@@ -237,7 +237,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
             Func<IEnumerable<Element>> GetElements = () =>
             {
                 List<Element> useElements = new List<Element>();
-                FilteredElementCollector collector = new FilteredElementCollector(uiDoc.Document);
+                FilteredElementCollector collector = new FilteredElementCollector(uiDoc.Document, uiDoc.Document.ActiveView.Id);
                 collector.WherePasses(new ElementClassFilter(typeof(FamilyInstance)));
 
                 foreach (Element element in collector)

@@ -64,33 +64,26 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                 
                 try
                 {
-                    foreach (KeyValuePair<string, string> paramtext in electricalParameters)
-                    {
-                        if (paramtext.Key.ToString().Contains("Destination"))
-                        {
-                            electricalParameters[paramtext.Key] = mark;
-                        }
-                    }
-
-
                     foreach (KeyValuePair<string,string> paramtext in electricalParameters)
                     {
                         mark = ele.LookupParameter("Mark").AsString();
+                        string value = (paramtext.Key.ToString().Contains("Destination")) ? mark : paramtext.Value;
+
                         try
                         {
                             Parameter param = ele.LookupParameter(paramtext.Key);
-                            param.Set(paramtext.Value);
-                        }
-                        catch
-                        {
-                            if (paramtext.Key.ToString().Contains("Destination"))
+                            if (param != null)
                             {
-                                electricalParameters[paramtext.Key] = mark;
+                                param.Set(value);
                             }
-                            Element typ = doc.GetElement(ele.GetTypeId());
-                            Parameter param = typ.LookupParameter(paramtext.Key);
-                            param.Set(paramtext.Value);
+                            else
+                            {
+                                Element typ = doc.GetElement(ele.GetTypeId());
+                                param = typ.LookupParameter(paramtext.Key);
+                                param.Set(value);
+                            }
                         }
+                        catch { }
                     }
                     success++;
                 }

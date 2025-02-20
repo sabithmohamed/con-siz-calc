@@ -44,10 +44,14 @@
                                                 <Run Text="." />
                                             </TextBlock>
                                             <TextBlock
-                                                MinWidth="100"
+                                                MinWidth="75"
                                                 Padding="0,0,5,0"
                                                 Text="{Binding Conduit.Name, Mode=OneWay}" />
-                                            <TextBlock Text="{Binding Destination, TargetNullValue='NONE SPECIFIED', Mode=OneWay}" />
+                                            <TextBlock
+                                                MinWidth="100"
+                                                Padding="0,0,5,0"
+                                                Text="{Binding Destination, TargetNullValue='NONE SPECIFIED', Mode=OneWay}" />
+                                            <TextBlock Text="{Binding Cable_Destination, TargetNullValue='NONE SPECIFIED', Mode=OneWay}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </HierarchicalDataTemplate.ItemTemplate>

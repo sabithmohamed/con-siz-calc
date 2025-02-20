@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using Autodesk.Revit.DB;
 using Idibri.RevitPlugin.Common.Infrastructure;
 using Idibri.RevitPlugin.ConduitSizeCalculator.Models;
@@ -12,12 +13,14 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public int Index { get; private set; }
         public Conduit Conduit { get; private set; }
         public string Destination { get; private set; }
+        public string Cable_Destination { get; private set; }
 
-        public ConduitDefinition(int index, Conduit conduit, string destination)
+        public ConduitDefinition(int index, Conduit conduit, string destination, string cable_Destination)
         {
             Index = index;
             Conduit = conduit;
             Destination = destination;
+            Cable_Destination = cable_Destination;
         }
     }
 
@@ -111,7 +114,19 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 if (destination_param != null)
                     destination = destination_param.AsString();
             }
-            return new ConduitDefinition(index, conduit, destination);
+
+            string cable_destination = null;
+            Parameter cable_destination_param = Element.LookupParameter("Cable Destination " + index);
+            if (cable_destination_param != null)
+                cable_destination = cable_destination_param.AsString();
+            else
+            {
+                Element typ = Element.Document.GetElement(Element.GetTypeId());
+                cable_destination_param = typ.LookupParameter("Cable Destination " + index);
+                if (cable_destination_param != null)
+                    cable_destination = cable_destination_param.AsString();
+            }
+            return new ConduitDefinition(index, conduit, destination, cable_destination);
         }
         #endregion
     }

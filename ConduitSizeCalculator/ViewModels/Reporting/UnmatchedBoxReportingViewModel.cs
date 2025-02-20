@@ -269,7 +269,10 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
             foreach (ConduitDefinition cd in junctionBox.Conduits)
             {
                 if (cd.Conduit == null) { continue; }
-                if (cd.Destination == null || !JunctionBoxIndex.ContainsKey(cd.Destination))
+                bool x = cd.Destination == null;
+                bool y = !JunctionBoxIndex.ContainsKey(cd.Destination);
+                bool z = !JunctionBoxIndex.ContainsKey(cd.Cable_Destination);
+                if (x || y || z)
                 {
                     offendingJunctionBox.UnmatchedConduits.Add(cd);
                 }

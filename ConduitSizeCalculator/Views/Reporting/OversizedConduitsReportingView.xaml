@@ -24,22 +24,40 @@
     </UserControl.Resources>
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="85" />
+            <ColumnDefinition Width="85" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Text="#" FontWeight="Bold" TextAlignment="Center"/>
-        <TextBlock Grid.Column="2" Text="Conduit_Size" FontWeight="Bold" TextAlignment="Center"/>
-        <TextBlock Grid.Column="3" Text="OD" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock
+            Grid.Column="1"
+            FontWeight="Bold"
+            Text="#"
+            TextAlignment="Center" />
+        <TextBlock
+            Grid.Column="2"
+            FontWeight="Bold"
+            Text="Conduit_Size"
+            TextAlignment="Center" />
+        <TextBlock
+            Grid.Column="3"
+            FontWeight="Bold"
+            Text="OD"
+            TextAlignment="Center" />
         <TextBlock Text="{Binding ViewModelException.Message}" Visibility="{Binding ViewModelException, Converter={StaticResource NotNullToVisibleConverter}}" />
-        <Grid Grid.Row="1" Grid.ColumnSpan="5" Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
-            <TextBlock Text="No boxes with oversized conduits found" Margin=" 5,10,0,0" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
+        <Grid
+            Grid.Row="1"
+            Grid.ColumnSpan="5"
+            Visibility="{Binding ViewModelException, Converter={StaticResource NullToVisibleConverter}}">
+            <TextBlock
+                Margin="5,10,0,0"
+                Text="No boxes with oversized conduits found"
+                Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleEqualToVisibleConverter}, ConverterParameter=0}" />
             <uc:StretchingTreeView ItemsSource="{Binding JunctionBoxGroups}" Visibility="{Binding JunctionBoxGroups.Count, Converter={StaticResource DoubleNotEqualToVisibleConverter}, ConverterParameter=0}">
                 <uc:StretchingTreeView.ItemContainerStyle>
                     <Style TargetType="TreeViewItem">
@@ -62,8 +80,14 @@
                                                 <Run Text="#" />
                                                 <Run Text="{Binding Index, Mode=OneWay}" />
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" Text="{Binding Conduit.Name}" TextAlignment="Center" />
-                                            <TextBlock Grid.Column="2" TextAlignment="Center" Text="{Binding Conduit.OutsideDiameterIn , Converter={StaticResource DoubleToImperialLengthConverter}}" />
+                                            <TextBlock
+                                                Grid.Column="1"
+                                                Text="{Binding Conduit.Name}"
+                                                TextAlignment="Center" />
+                                            <TextBlock
+                                                Grid.Column="2"
+                                                Text="{Binding Conduit.OutsideDiameterIn, Converter={StaticResource DoubleToImperialLengthConverter}}"
+                                                TextAlignment="Center" />
                                         </Grid>
                                     </DataTemplate>
                                 </HierarchicalDataTemplate.ItemTemplate>

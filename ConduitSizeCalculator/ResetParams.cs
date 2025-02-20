@@ -65,17 +65,21 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator
                 {
                     foreach (string paramtext in electricalParameters)
                     {
+                        Parameter param = ele.LookupParameter(paramtext);
                         try
                         {
-                            Parameter param = ele.LookupParameter(paramtext);
-                            param.Set("");
+                            if (param != null)
+                            {
+                                param.Set("");
+                            }
+                            else
+                            {
+                                Element typ = doc.GetElement(ele.GetTypeId());
+                                param = typ.LookupParameter(paramtext);
+                                param.Set("");
+                            }
                         }
-                        catch
-                        {
-                            Element typ = doc.GetElement(ele.GetTypeId());
-                            Parameter param = typ.LookupParameter(paramtext);
-                            param.Set("");
-                        }
+                        catch { }  
                     }
                     success++;
                 }
