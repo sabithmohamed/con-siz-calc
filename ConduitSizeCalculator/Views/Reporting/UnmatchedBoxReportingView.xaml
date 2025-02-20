@@ -103,8 +103,9 @@
                                             <TextBlock
                                                 TextAlignment="Center"
                                                 Grid.Column="0">
+                                                <Run Text="#" />
                                                 <Run Text="{Binding Index, Mode=OneWay}" />
-                                                <Run Text="." />
+                                                
                                             </TextBlock>
                                             <TextBlock
                                                 TextAlignment="Center"
