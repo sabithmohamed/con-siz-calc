@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\reporting\\unmatchedboxreportingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\reporting\\unmatchedboxreportingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\viewmodels\\reporting\\unmatchedboxreportingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\views\\reporting\\oversizedconduitsreportingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\views\\reporting\\oversizedconduitsreportingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\conduitsizecalculator\\viewmodels\\reporting\\unmatchedboxreportingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\reporting\\unmatchedboxreportingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|c:\\users\\mohamed sabith\\onedrive - bim integrated services private limited\\documents\\github\\con-siz-calc\\conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5CF4EE8-1A88-4989-8612-D441C3C160E0}|ConduitSizeCalculator\\ConduitSizeCalculator.csproj|solutionrelative:conduitsizecalculator\\viewmodels\\reporting\\reportingmasterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +42,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OversizedConduitsReportingView.xaml",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Reporting\\OversizedConduitsReportingView.xaml",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Reporting\\OversizedConduitsReportingView.xaml",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Reporting\\OversizedConduitsReportingView.xaml",
+              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Reporting\\OversizedConduitsReportingView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-20T07:39:56.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UnmatchedBoxReportingView.xaml",
+              "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Reporting\\UnmatchedBoxReportingView.xaml",
+              "RelativeDocumentMoniker": "ConduitSizeCalculator\\Views\\Reporting\\UnmatchedBoxReportingView.xaml",
+              "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\Views\\Reporting\\UnmatchedBoxReportingView.xaml",
+              "RelativeToolTip": "ConduitSizeCalculator\\Views\\Reporting\\UnmatchedBoxReportingView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-20T07:35:51.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ReportingMasterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
               "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Reporting\\ReportingMasterViewModel.cs",
@@ -47,13 +79,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UnmatchedBoxReportingViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\UnmatchedBoxReportingViewModel.cs",
               "RelativeDocumentMoniker": "ConduitSizeCalculator\\ViewModels\\Reporting\\UnmatchedBoxReportingViewModel.cs",
               "ToolTip": "C:\\Users\\Mohamed sabith\\OneDrive - BIM Integrated Services Private Limited\\Documents\\GitHub\\con-siz-calc\\ConduitSizeCalculator\\ViewModels\\Reporting\\UnmatchedBoxReportingViewModel.cs",
               "RelativeToolTip": "ConduitSizeCalculator\\ViewModels\\Reporting\\UnmatchedBoxReportingViewModel.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAApwA4BAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAWwAgBAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-20T05:32:01.7Z",
               "EditorCaption": ""
