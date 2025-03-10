@@ -400,7 +400,8 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
                 groups[worksetName].Add(node);
             }
             NodeGroups = groups.Keys.OrderBy(k => k).Select(k => new NodeGroup(k, groups[k])).ToList();
+
+            #endregion
         }
-        #endregion
     }
 }

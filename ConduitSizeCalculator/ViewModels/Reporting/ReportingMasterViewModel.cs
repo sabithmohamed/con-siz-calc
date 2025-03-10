@@ -59,6 +59,7 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
         public JunctionBox(Element element, ConduitSchedule conduitSchedule, string defaultConduitType)
         {
             Element = element;
+            var x = Element.Id;
             Mark = Element.get_Parameter(BuiltInParameter.ALL_MODEL_MARK).AsString();
 
             // These values are in feet, we want it in inches.
@@ -66,8 +67,13 @@ namespace Idibri.RevitPlugin.ConduitSizeCalculator.ViewModels
 
             Parameter depth_param = Element.LookupParameter("Depth");
             DepthIn = depth_param != null ? depth_param.AsDouble() * 12.0 : typ.LookupParameter("Depth").AsDouble() * 12.0;
-            HeightIn = JunctionBoxParameters.Height.GetDouble(Element) * 12.0;
-            WidthIn = JunctionBoxParameters.Width.GetDouble(Element) * 12.0;
+
+            Parameter height_param = Element.LookupParameter("Height");
+
+            HeightIn = height_param != null ? height_param.AsDouble() * 12.0 : typ.LookupParameter("Height")==null? typ.LookupParameter("Cutout Diameter").AsDouble() * 12.0: typ.LookupParameter("Height").AsDouble() * 12.0;
+
+            Parameter width_param = Element.LookupParameter("Width");
+            WidthIn = width_param != null ? width_param.AsDouble() * 12.0 : typ.LookupParameter("Width") == null ? typ.LookupParameter("Cutout Diameter").AsDouble() * 12.0 : typ.LookupParameter("Width").AsDouble() * 12.0;
 
             Conduit1 = GetConduit(1, JunctionBoxConduits.Conduit1, conduitSchedule, defaultConduitType);
             Conduit2 = GetConduit(2, JunctionBoxConduits.Conduit2, conduitSchedule, defaultConduitType);
